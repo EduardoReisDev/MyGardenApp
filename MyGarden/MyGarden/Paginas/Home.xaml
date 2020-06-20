@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyGarden.Paginas.Home"
+             NavigationPage.HasNavigationBar="False">
+             
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
+                    <Image Source="mygardenlogo.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
+                    <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Margin="10, 0, 10, 0">
+                    <Entry Placeholder="Pesquisar"/>
+                </StackLayout>
+
+                <StackLayout Margin="10">
+                    <Label Text="Plantas cadastradas"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
