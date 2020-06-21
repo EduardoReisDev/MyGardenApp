@@ -9,19 +9,37 @@
              
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
-                    <Image Source="mygardenlogo.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
-                    <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand"/>
+            <StackLayout BackgroundColor="#FFFFFF">
+                <StackLayout BackgroundColor="#e9ecef">
+                    <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
+                        <Image Source="LogoMyGarden.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
+                        <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#ced4da" Margin="10, 5,10,20">
+                        <StackLayout Margin="10, 0, 10, 0">
+                            <Entry Placeholder="Busque suas plantas"/>
+                        </StackLayout>
+                    </Frame>
                 </StackLayout>
-                <StackLayout Margin="10, 0, 10, 0">
-                    <Entry Placeholder="Pesquisar"/>
-                </StackLayout>
-
+           
                 <StackLayout Margin="10">
-                    <Label Text="Plantas cadastradas"/>
+                    <Label Text="5 plantas no seu jardim"/>
                 </StackLayout>
 
+                <Frame Padding="0" CornerRadius="10" BackgroundColor="#e9ecef" Margin="10, 5,10,20">
+                    <StackLayout Margin="10, 0, 10, 0" Orientation="Horizontal">
+                        <StackLayout>
+                            <Image Source="pacova.jpg" WidthRequest="100"/>
+                        </StackLayout>
+                        <StackLayout>
+                            <Label>Pacová</Label>
+                            <Label>Philodendron martianum</Label>
+                            <Label>Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
+                            <Label>Adquirada em 10/12/1998</Label>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+                
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
