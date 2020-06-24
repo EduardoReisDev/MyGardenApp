@@ -5,10 +5,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.DetalhePlanta"
-             NavigationPage.IconColor="#02C39A">
+             NavigationPage.IconColor="#000000">
     <ContentPage.Content>
         <StackLayout BackgroundColor="#f2f2f2">
-
+            <StackLayout Margin="20,0,20,0">
+                <Label Text="nome popular"/>
+                <Label Text="Costela-de-adão" TextColor="#02C39A" FontSize="20"/>
+                <Label Text="nome científico"/>
+                <Label Text="Mostera deliciosa" TextColor="#02C39A" FontSize="20"/>
+                <Label Text="observação"/>
+                <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex tellus, dignissim non venenatis sed, vestibulum eu mauris." TextColor="#02C39A" FontSize="20"/>
+                <Label Text="adquirida em"/>
+                <Label Text="10/09/1998" TextColor="#02C39A" FontSize="20"/>
+                <Grid Margin="10, 5,10,5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Editar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080"/>
+                    <Button Grid.Column="1"  Text="Excluir" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080"/>
+                </Grid>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
