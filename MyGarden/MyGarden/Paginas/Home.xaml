@@ -13,7 +13,7 @@
                 <StackLayout BackgroundColor="#f2f2f2">
                     <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
                         <Image Source="LogoMyGarden.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
-                        <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand"/>
+                        <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand" Clicked="GoCadastro"/>
                     </StackLayout>
                     <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,20">
                         <Grid>
@@ -51,139 +51,9 @@
                             <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
                         </StackLayout>
                     </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                </Frame>
-
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoDetalhe"/>
+                    </Frame.GestureRecognizers>
                 </Frame>
 
             </StackLayout>

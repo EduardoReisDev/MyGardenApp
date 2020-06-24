@@ -16,5 +16,15 @@ namespace MyGarden.Paginas
         {
             InitializeComponent();
         }
+
+        public async void GoDetalhe(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new DetalhePlanta());
+        }
+
+        public async void GoCadastro(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new CadastroPlanta());
+        }
     }
 }
