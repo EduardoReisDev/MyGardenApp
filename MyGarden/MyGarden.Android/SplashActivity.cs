@@ -13,6 +13,7 @@ using Android.Widget;
 
 namespace MyGarden.Droid
 {
+
     [Activity(Theme = "@style/MyTheme.Splash", MainLauncher = true, NoHistory = true)]
     public class SplashActivity : Activity
     {

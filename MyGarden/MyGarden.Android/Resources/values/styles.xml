@@ -20,7 +20,7 @@
     <item name="colorAccent">#02C39A</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
-    <item name="android:statusBarColor">#e9ecef</item>
+    <item name="android:statusBarColor">#f2f2f2</item>
     
     <item name="windowActionModeOverlay">true</item>
 
