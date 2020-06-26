@@ -16,5 +16,10 @@ namespace MyGarden.Paginas
         {
             InitializeComponent();
         }
+
+        public async void GoEditar(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new EditarPlanta());
+        }
     }
 }
