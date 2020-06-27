@@ -19,7 +19,7 @@ namespace MyGarden.Paginas
 
         public async void GoEditar(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new EditarPlanta());
+            await Navigation.PushAsync(new Paginas.EditarPlanta());
         }
     }
 }

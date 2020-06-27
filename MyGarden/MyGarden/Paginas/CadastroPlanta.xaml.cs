@@ -19,11 +19,6 @@ namespace MyGarden.Paginas
             InitializeComponent();
         }
 
-        public async void GoHome(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new Home());
-        }
-
         private void SalvarAction(object sender, EventArgs args)
         {
             //Obter dados da tela
@@ -39,6 +34,11 @@ namespace MyGarden.Paginas
             //Voltar para tela de pesquisa
             App.Current.MainPage = new NavigationPage(new Home());
 
+        }
+
+        public async void GoHome(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new Home());
         }
     }
 }

@@ -13,15 +13,15 @@
                     <StackLayout Margin="10,10,10,0">
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                            <Controls:XEntry Placeholder="Nome popular" PlaceholderColor="#9f9fa6"/>
+                            <Controls:XEntry x:Name="NomePopular" Placeholder="Nome popular" PlaceholderColor="#9f9fa6"/>
                         </Frame>
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                            <Controls:XEntry Placeholder="Nome científico" PlaceholderColor="#9f9fa6"/>
+                            <Controls:XEntry x:Name="NomeCientifico" Placeholder="Nome científico" PlaceholderColor="#9f9fa6"/>
                         </Frame>
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                            <Controls:XEntry Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
+                            <Controls:XEntry x:Name="Observacoes" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
                         </Frame>
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
@@ -46,8 +46,8 @@
                                 <ColumnDefinition />
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
-                            <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080"/>
-                            <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A"/>
+                            <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080" Clicked="GoHome"/>
+                            <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="SalvarAction"/>
                         </Grid>
 
                     </StackLayout>
