@@ -31,30 +31,39 @@
                 </StackLayout>
 
                 <StackLayout Margin="10,0,0,0">
+                    <Label Text="" x:Name="LblCount"/>
                     <Label Text="5 plantas no seu jardim"/>
                 </StackLayout>
 
-                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="Auto" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="150"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
-                        <StackLayout Grid.Column="1">
-                            <Label FontSize="30" TextColor="#00A896">Pacová</Label>
-                            <Label FontAttributes="Italic" TextColor="#00A896">Philodendron martianum</Label>
-                            <Label >Pode ser plantada tanto em vasos como diretamente no solo, mas sempre deixado em local com pouco sol direto.</Label>
-                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
-                        </StackLayout>
-                    </Grid>
-                    <Frame.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoDetalhe"/>
-                    </Frame.GestureRecognizers>
-                </Frame>
+                <ListView x:Name="ListaPlantas" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="pacova.jpg" Aspect="AspectFill"/>
+                                        <StackLayout Grid.Column="1">
+                                            <Label Text="{Binding NomePopular}" FontSize="30" TextColor="#00A896"/>
+                                            <Label Text="{Binding NomeCientifico}" FontAttributes="Italic" TextColor="#00A896"/>
+                                            <Label Text="{Binding Observacoes}"/>
+                                            <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
+                                        </StackLayout>
+                                    </Grid>
+                                    <Frame.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="GoDetalhe" CommandParameter="{Binding .}"/>
+                                    </Frame.GestureRecognizers>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
 
             </StackLayout>
         </ScrollView>
