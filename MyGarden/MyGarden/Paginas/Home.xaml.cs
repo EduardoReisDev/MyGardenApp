@@ -22,13 +22,20 @@ namespace MyGarden.Paginas
             Database database = new Database();
             Lista = database.Consultar();
             ListaPlantas.ItemsSource = database.Consultar();
-            lblCount.Text = Lista.Count.ToString();
+            LblCount.Text = Lista.Count.ToString();
         }
 
         public async void GoDetalhe(object sender, EventArgs args)
         {
-            Frame 
-            await Navigation.PushAsync(new DetalhePlanta());
+            Frame GoDetalhe = (Frame)sender;
+            TapGestureRecognizer tapGest = (TapGestureRecognizer)GoDetalhe.GestureRecognizers[0];
+            Planta planta = tapGest.CommandParameter as Planta;
+            await Navigation.PushAsync(new DetalhePlanta(planta));
+        }
+
+        public void PesquisarAction (object sender, TextChangedEventArgs args)
+        {
+            ListaPlantas.ItemsSource = Lista.Where(a => a.NomePopular.Contains(args.NewTextValue)).ToList();
         }
 
         public async void GoCadastro(object sender, EventArgs args)

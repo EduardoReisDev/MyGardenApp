@@ -25,14 +25,14 @@
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.Column="0" Source="search.png" WidthRequest="10" Margin="10,0,0,0"/>
-                            <Controls:XEntry Grid.Column="1" Placeholder="Busque suas plantas" PlaceholderColor="#9f9fa6" TextColor="#02C39A"/>
+                            <Controls:XEntry Grid.Column="1" Placeholder="Busque suas plantas" PlaceholderColor="#9f9fa6" TextColor="#02C39A" TextChanged="PesquisarAction"/>
                         </Grid>
                     </Frame>
                 </StackLayout>
 
-                <StackLayout Margin="10,0,0,0">
+                <StackLayout Margin="10,0,0,0" Orientation="Horizontal">
                     <Label Text="" x:Name="LblCount"/>
-                    <Label Text="5 plantas no seu jardim"/>
+                    <Label Text="plantas no seu jardim"/>
                 </StackLayout>
 
                 <ListView x:Name="ListaPlantas" HasUnevenRows="True">
@@ -52,7 +52,7 @@
                                         <StackLayout Grid.Column="1">
                                             <Label Text="{Binding NomePopular}" FontSize="30" TextColor="#00A896"/>
                                             <Label Text="{Binding NomeCientifico}" FontAttributes="Italic" TextColor="#00A896"/>
-                                            <Label Text="{Binding Observacoes}"/>
+                                            <Label Text="{Binding Observacao}"/>
                                             <Label TextColor="#00A896" VerticalOptions="EndAndExpand">Adquirada em 10/12/1998</Label>
                                         </StackLayout>
                                     </Grid>

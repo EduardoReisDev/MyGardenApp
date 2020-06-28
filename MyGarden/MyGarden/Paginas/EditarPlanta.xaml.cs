@@ -22,7 +22,7 @@ namespace MyGarden.Paginas
 
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
-            Observacoes.Text = planta.Observacoes;
+            Observacoes.Text = planta.Observacao;
         }
 
         public async void GoHome(object sender, EventArgs args)
@@ -34,7 +34,7 @@ namespace MyGarden.Paginas
         {
             planta.NomePopular = NomePopular.Text;
             planta.NomeCientifico = NomeCientifico.Text;
-            planta.Observacoes = Observacoes.Text;
+            planta.Observacao = Observacoes.Text;
 
             Database database = new Database();
             database.Atualizacao(planta);

@@ -25,7 +25,7 @@ namespace MyGarden.Paginas
             Planta planta = new Planta();
             planta.NomePopular = NomePopular.Text;
             planta.NomeCientifico = NomeCientifico.Text;
-            planta.Observacoes = Observacoes.Text;
+            planta.Observacao = Observacao.Text;
 
             //Salvar informacoes no banco
             Database database = new Database();

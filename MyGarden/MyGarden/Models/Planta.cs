@@ -12,7 +12,7 @@ namespace MyGarden.Models
         public int Id { get; set; }
         public string NomePopular { get; set; }
         public string NomeCientifico { get; set; }
-        public string Observacoes { get; set; }
+        public string Observacao { get; set; }
         public DateTime Data { get; set; }
     }
 }
