@@ -19,9 +19,16 @@ namespace MyGarden.Paginas
         public Home()
         {
             InitializeComponent();
+            ConsultarPlantas();
+
+        }
+
+        public void ConsultarPlantas()
+        {
             Database database = new Database();
             Lista = database.Consultar();
-            ListaPlantas.ItemsSource = database.Consultar();
+            ListaPlantas.ItemsSource = Lista;
+
             LblCount.Text = Lista.Count.ToString();
         }
 
@@ -41,6 +48,26 @@ namespace MyGarden.Paginas
         public async void GoCadastro(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new CadastroPlanta());
+        }
+
+        public void GoEditar(object sender, EventArgs args)
+        {
+            Image btnEditar = (Image)sender;
+            TapGestureRecognizer tapGest = (TapGestureRecognizer)btnEditar.GestureRecognizers[0];
+            Planta planta = tapGest.CommandParameter as Planta;
+
+            Navigation.PushAsync(new EditarPlanta(planta));
+        }
+
+        public void ExcluirAction(object sender, EventArgs args)
+        {
+            Image btnExcluir = (Image)sender;
+            TapGestureRecognizer tapGest = (TapGestureRecognizer)btnExcluir.GestureRecognizers[0];
+            Planta planta = tapGest.CommandParameter as Planta;
+            Database database = new Database();
+            database.Exclusao(planta);
+
+            ConsultarPlantas();
         }
     }
 }

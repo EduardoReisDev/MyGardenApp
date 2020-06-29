@@ -13,6 +13,5 @@ namespace MyGarden.Models
         public string NomePopular { get; set; }
         public string NomeCientifico { get; set; }
         public string Observacao { get; set; }
-        public DateTime Data { get; set; }
     }
 }

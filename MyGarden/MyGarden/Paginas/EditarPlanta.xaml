@@ -9,7 +9,7 @@
         <StackLayout>
             <ScrollView>
                 <StackLayout BackgroundColor="#f2f2f2">
-                    <Label Text="Nova planta" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25"/>
+                    <Label Text="Editar planta" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25"/>
                     <StackLayout Margin="10,10,10,0">
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
@@ -21,21 +21,7 @@
                         </Frame>
 
                         <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                            <Controls:XEntry x:Name="Observacoes" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
-                        </Frame>
-
-                        <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                            <Grid>
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition />
-                                    <ColumnDefinition />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="5,0,0,0" FontSize="17" TextColor="#9f9fa6">Data de aquisição:</Label>
-                                <Controls:XDate Grid.Column="1" MinimumDate="01/01/1900" MaximumDate="12/31/2050" Date="{Binding SelectedDate}"/>
-                            </Grid>
+                            <Controls:XEntry x:Name="Observacao" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
                         </Frame>
 
                         <Grid Margin="10, 5,10,5">
@@ -47,7 +33,7 @@
                                 <ColumnDefinition />
                             </Grid.ColumnDefinitions>
                             <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080" Clicked="GoHome"/>
-                            <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="SalvarAction"/>
+                            <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="Salvar"/>
                         </Grid>
 
                     </StackLayout>

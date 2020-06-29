@@ -25,18 +25,6 @@
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    
-                    <Button Grid.Column="0" Text="Editar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080">
-                        <Button.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="GoEditar" CommandParameter="{Binding .}"/>
-                        </Button.GestureRecognizers>
-                    </Button>
-
-                    <Button Grid.Column="1"  Text="Excluir" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080">
-                        <Button.GestureRecognizers>
-                            <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
-                        </Button.GestureRecognizers>
-                    </Button>
                 </Grid>
             </StackLayout>
         </StackLayout>

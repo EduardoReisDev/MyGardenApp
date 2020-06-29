@@ -19,22 +19,5 @@ namespace MyGarden.Paginas
             InitializeComponent();
             BindingContext = planta;
         }
-
-        public void GoEditar(object sender, EventArgs args)
-        {
-            Button btnEditar = (Button)sender;
-            TapGestureRecognizer tapGest = (TapGestureRecognizer)btnEditar.GestureRecognizers[0];
-            Planta planta = tapGest.CommandParameter as Planta;
-            Navigation.PushAsync(new EditarPlanta(planta));
-        }
-
-        public void ExcluirAction(object sender, EventArgs args)
-        {
-            Button btnExcluir = (Button)sender;
-            TapGestureRecognizer tapGest = (TapGestureRecognizer)btnExcluir.GestureRecognizers[0];
-            Planta planta = tapGest.CommandParameter as Planta;
-            Database database = new Database();
-            database.Exclusao(planta);
-        }
     }
 }

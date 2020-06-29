@@ -22,24 +22,26 @@ namespace MyGarden.Paginas
 
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
-            Observacoes.Text = planta.Observacao;
+            Observacao.Text = planta.Observacao;
         }
 
-        public async void GoHome(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new Home());
-        }
-
-        private void SalvarAction(object sender, EventArgs args)
+        public void Salvar(object sender, EventArgs args)
         {
             planta.NomePopular = NomePopular.Text;
-            planta.NomeCientifico = NomeCientifico.Text;
-            planta.Observacao = Observacoes.Text;
+            planta.NomeCientifico = NomePopular.Text;
+            planta.Observacao = Observacao.Text;
 
             Database database = new Database();
             database.Atualizacao(planta);
 
             App.Current.MainPage = new NavigationPage(new Home());
+        }
+
+        public async void GoHome(object sender, EventArgs args)
+        {
+           await DisplayAlert("Nome popular", NomePopular.Text, "ok");
+           await DisplayAlert("Nome cientifico", NomeCientifico.Text, "ok");
+           await DisplayAlert("Observacao", Observacao.Text, "ok");
         }
     }
 }

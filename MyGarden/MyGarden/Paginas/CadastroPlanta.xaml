@@ -20,19 +20,6 @@
                     <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
                         <Controls:XEntry x:Name="Observacao" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
                     </Frame>
-                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" VerticalOptions="CenterAndExpand" Margin="5,0,0,0" FontSize="17" TextColor="#9f9fa6">Data de aquisição:</Label>
-                            <Controls:XDate Grid.Column="1" MinimumDate="01/01/1900" MaximumDate="12/31/2050" Date="{Binding SelectedDate}"/>
-                        </Grid>
-                    </Frame>
                     <Grid Margin="10, 5,10,5">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="2*" />
