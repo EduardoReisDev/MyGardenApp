@@ -6,7 +6,7 @@
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.Home"
              NavigationPage.HasNavigationBar="False">
-             
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#FFFFFF">
@@ -45,21 +45,28 @@
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="120"/>
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="30"/>
                                         </Grid.ColumnDefinitions>
                                         <Image Source="pacova.jpg" Aspect="AspectFill"/>
                                         <StackLayout Grid.Column="1">
-                                            <Label Text="{Binding NomePopular}" FontSize="30" TextColor="#00A896"/>
-                                            <Label Text="{Binding NomeCientifico}" FontAttributes="Italic" TextColor="#00A896"/>
-                                            <Label Text="{Binding Observacao}"/>
+                                            <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
+                                            <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
+                                            <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}"/>
                                         </StackLayout>
-                                        <Image Source="menu.png" Grid.Column="2" WidthRequest="20" VerticalOptions="StartAndExpand" Margin="0,10,0,0">
-                                            <Image.GestureRecognizers>
-                                                <TapGestureRecognizer Tapped="GoEditar" CommandParameter="{Binding .}"/>
-                                            </Image.GestureRecognizers>
-                                        </Image>
+                                        <StackLayout Grid.Column="2" VerticalOptions="EndAndExpand">
+                                            <Image Source="pen.png" WidthRequest="25">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="bin.png" WidthRequest="25" Margin="0,10,0,10">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
                                     </Grid>
                                     <Frame.GestureRecognizers>
                                         <TapGestureRecognizer Tapped="GoDetalhe" CommandParameter="{Binding .}"/>

@@ -24,6 +24,44 @@
                             <Controls:XEntry x:Name="Observacao" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
                         </Frame>
 
+                        <Label Text="Selecione os dias da semana para aguar essa planta: " Margin="10, 5,10,5"/>
+                        <Grid Margin="10, 5,10,5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="4*" />
+                                <RowDefinition Height="4*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+
+                            <Switch Grid.Column="0" Grid.Row="0" Toggled="BtnSegunda"/>
+                            <Label Grid.Column="1" Grid.Row="0" Text="Segunda" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="2" Grid.Row="0" Toggled="BtnTerca"/>
+                            <Label Grid.Column="3" Grid.Row="0" Text="Terça" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="0" Grid.Row="1" Toggled="BtnQuarta"/>
+                            <Label Grid.Column="1" Grid.Row="1" Text="Quarta" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="2" Grid.Row="1" Toggled="BtnQuinta"/>
+                            <Label Grid.Column="3" Grid.Row="1" Text="Quinta" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="0" Grid.Row="2" Toggled="BtnSexta"/>
+                            <Label Grid.Column="1" Grid.Row="2" Text="Sexta" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="2" Grid.Row="2" Toggled="BtnSabado"/>
+                            <Label Grid.Column="3" Grid.Row="2" Text="Sábado" VerticalOptions="CenterAndExpand"/>
+
+                            <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
+                            <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
+
+                        </Grid>
+
                         <Grid Margin="10, 5,10,5">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="2*" />

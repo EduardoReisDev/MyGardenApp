@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyGarden.Banco;
 using MyGarden.Models;
+using System.Diagnostics;
 
 namespace MyGarden.Paginas
 {
@@ -20,7 +21,6 @@ namespace MyGarden.Paginas
         {
             InitializeComponent();
             ConsultarPlantas();
-
         }
 
         public void ConsultarPlantas()
@@ -28,7 +28,6 @@ namespace MyGarden.Paginas
             Database database = new Database();
             Lista = database.Consultar();
             ListaPlantas.ItemsSource = Lista;
-
             LblCount.Text = Lista.Count.ToString();
         }
 
@@ -50,24 +49,32 @@ namespace MyGarden.Paginas
             await Navigation.PushAsync(new CadastroPlanta());
         }
 
-        public void GoEditar(object sender, EventArgs args)
+        public void EditarAction(object sender, EventArgs args)
         {
             Image btnEditar = (Image)sender;
             TapGestureRecognizer tapGest = (TapGestureRecognizer)btnEditar.GestureRecognizers[0];
             Planta planta = tapGest.CommandParameter as Planta;
-
             Navigation.PushAsync(new EditarPlanta(planta));
         }
 
-        public void ExcluirAction(object sender, EventArgs args)
+        public async void ExcluirAction(object sender, EventArgs args)
         {
-            Image btnExcluir = (Image)sender;
-            TapGestureRecognizer tapGest = (TapGestureRecognizer)btnExcluir.GestureRecognizers[0];
-            Planta planta = tapGest.CommandParameter as Planta;
-            Database database = new Database();
-            database.Exclusao(planta);
+            string action = await DisplayActionSheet("Atenção, você deseja excluir essa planta?", "Cancel", null, "Sim, quero excluir.", "Não");
+            if (action == "Sim, quero excluir.")
+            {
+                Image btnExcluir = (Image)sender;
+                TapGestureRecognizer tapGest = (TapGestureRecognizer)btnExcluir.GestureRecognizers[0];
+                Planta planta = tapGest.CommandParameter as Planta;
+                Database database = new Database();
+                database.Exclusao(planta);
+                await DisplayAlert("MyGarden", "Parabéns, planta excluida com sucesso!", "Ótimo");
+                ConsultarPlantas();
+            }
 
-            ConsultarPlantas();
+            else
+            {
+                ConsultarPlantas();
+            }
         }
     }
 }

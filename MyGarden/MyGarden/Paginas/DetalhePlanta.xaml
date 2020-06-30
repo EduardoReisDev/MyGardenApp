@@ -15,17 +15,14 @@
                 <Label Text="{Binding NomeCientifico}" TextColor="#02C39A" FontSize="20"/>
                 <Label Text="observação"/>
                 <Label Text="{Binding Observacao}" TextColor="#02C39A" FontSize="20"/>
-                <Label Text="adquirida em"/>
-                <Label Text="10/09/1998" TextColor="#02C39A" FontSize="20"/>
-                <Grid Margin="10, 5,10,5">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
-                    </Grid.ColumnDefinitions>
-                </Grid>
+                <Label Text="dias de aguar"/>
+                <Label IsVisible="{Binding DiaUmX}" Text="{Binding DiaUm}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaDoisX}" Text="{Binding DiaDois}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaTresX}" Text="{Binding DiaTres}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaQuatroX}" Text="{Binding DiaQuatro}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaCincoX}" Text="{Binding DiaCinco}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaSeisX}" Text="{Binding DiaSeis}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaSeteX}" Text="{Binding DiaSete}" TextColor="#02C39A" FontSize="20"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

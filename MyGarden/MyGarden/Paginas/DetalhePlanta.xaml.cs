@@ -8,6 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyGarden.Models;
 using MyGarden.Banco;
+using System.Security.Cryptography.X509Certificates;
 
 namespace MyGarden.Paginas
 {
@@ -18,6 +19,8 @@ namespace MyGarden.Paginas
         {
             InitializeComponent();
             BindingContext = planta;
+
+            
         }
     }
 }
