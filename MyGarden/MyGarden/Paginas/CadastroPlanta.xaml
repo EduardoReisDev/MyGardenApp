@@ -34,28 +34,38 @@
                             <ColumnDefinition/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        
                         <Switch Grid.Column="0" Grid.Row="0" Toggled="BtnSegunda"/>
                         <Label Grid.Column="1" Grid.Row="0" Text="Segunda" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="2" Grid.Row="0" Toggled="BtnTerca"/>
                         <Label Grid.Column="3" Grid.Row="0" Text="Terça" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="0" Grid.Row="1" Toggled="BtnQuarta"/>
                         <Label Grid.Column="1" Grid.Row="1" Text="Quarta" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="2" Grid.Row="1" Toggled="BtnQuinta"/>
                         <Label Grid.Column="3" Grid.Row="1" Text="Quinta" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="0" Grid.Row="2" Toggled="BtnSexta"/>
                         <Label Grid.Column="1" Grid.Row="2" Text="Sexta" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="2" Grid.Row="2" Toggled="BtnSabado"/>
                         <Label Grid.Column="3" Grid.Row="2" Text="Sábado" VerticalOptions="CenterAndExpand"/>
-                        
                         <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
                         <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
-                        
+                    </Grid>
+                    <Label Text="Selecione uma imagem:" Margin="10, 5,10,5"/>
+                    <Grid Margin="10, 5,10,20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <ImageButton Source="galeria.png" WidthRequest="40" Clicked="AbrirGaleria" BackgroundColor="Transparent"/>
+                            <Label Text="Galeria" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                            <ImageButton Source="camera.png" WidthRequest="40" Clicked="AbrirCamera" BackgroundColor="Transparent"/>
+                            <Label Text="Camera" VerticalOptions="CenterAndExpand"/>
+                        </StackLayout>
                     </Grid>
                     <Grid Margin="10, 5,10,5">
                         <Grid.RowDefinitions>

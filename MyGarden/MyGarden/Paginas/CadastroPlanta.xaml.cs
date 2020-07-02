@@ -8,13 +8,14 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyGarden.Models;
 using MyGarden.Banco;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace MyGarden.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CadastroPlanta : ContentPage
     {
-        //string[] DiaDaSemana = { "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo" };
         string dia1 = null;
         string dia2 = null;
         string dia3 = null;
@@ -35,7 +36,6 @@ namespace MyGarden.Paginas
 
         public void BtnSegunda(object sender, ToggledEventArgs e)
         {
-            //DisplayAlert("Dia da Semana", DiaDaSemana[0], "Ok");
             dia1 = "Segunda";
         }
 
@@ -69,7 +69,51 @@ namespace MyGarden.Paginas
             dia7 = "Domingo";
         }
 
-        private void SalvarAction(object sender, EventArgs args)
+        public async void AbrirCamera(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("Nenhuma Câmera", ":( Nenuma Câmera disponível.", "OK");
+                return;
+            }
+
+            var arquivo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                SaveToAlbum = true,
+            });
+
+            string NomeArquivo = arquivo.AlbumPath;
+            await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
+
+            if (arquivo == null)
+            {
+                await DisplayAlert("Alerta", "Nenhum arquivo selecionado", "OK");
+            }
+        }
+
+        public async void AbrirGaleria(object sender, EventArgs args)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Ops", "Galeria de fotos não suportada.", "OK");
+
+                return;
+            }
+
+            var arquivo = await CrossMedia.Current.PickPhotoAsync();
+
+            string NomeArquivo = arquivo.AlbumPath;
+            await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
+
+            if (arquivo == null)
+                return;
+        }
+
+        public void SalvarAction(object sender, EventArgs args)
         {
             //Obter dados da tela
             Planta planta = new Planta
@@ -94,7 +138,6 @@ namespace MyGarden.Paginas
 
             //Voltar para tela de pesquisa
             App.Current.MainPage = new NavigationPage(new Home());
-
         }
     }
 }

@@ -59,7 +59,6 @@
 
                             <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
                             <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
-
                         </Grid>
 
                         <Grid Margin="10, 5,10,5">

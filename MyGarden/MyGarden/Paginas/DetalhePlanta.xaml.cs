@@ -19,8 +19,6 @@ namespace MyGarden.Paginas
         {
             InitializeComponent();
             BindingContext = planta;
-
-            
         }
     }
 }
