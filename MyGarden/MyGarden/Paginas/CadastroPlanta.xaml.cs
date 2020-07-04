@@ -23,6 +23,7 @@ namespace MyGarden.Paginas
         string dia5 = null;
         string dia6 = null;
         string dia7 = null;
+        string NomeArquivo;
 
         public CadastroPlanta()
         {
@@ -127,7 +128,8 @@ namespace MyGarden.Paginas
                 DiaQuatro = dia4,
                 DiaCinco = dia5,
                 DiaSeis = dia6,
-                DiaSete = dia7
+                DiaSete = dia7,
+                Imagem = NomeArquivo,
             };
 
             //Salvar informacoes no banco

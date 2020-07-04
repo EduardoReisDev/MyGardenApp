@@ -39,7 +39,7 @@ namespace MyGarden.Paginas
             await Navigation.PushAsync(new DetalhePlanta(planta));
         }
 
-        public void PesquisarAction (object sender, TextChangedEventArgs args)
+        public void PesquisarAction(object sender, TextChangedEventArgs args)
         {
             ListaPlantas.ItemsSource = Lista.Where(a => a.NomePopular.Contains(args.NewTextValue)).ToList();
         }

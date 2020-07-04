@@ -10,19 +10,19 @@
         <StackLayout BackgroundColor="#f2f2f2">
             <StackLayout Margin="20,0,20,0">
                 <Label Text="nome popular"/>
-                <Label Text="{Binding NomePopular}" TextColor="#02C39A" FontSize="20"/>
+                <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" TextColor="#02C39A" FontSize="20"/>
                 <Label Text="nome científico"/>
-                <Label Text="{Binding NomeCientifico}" TextColor="#02C39A" FontSize="20"/>
+                <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" TextColor="#02C39A" FontSize="20"/>
                 <Label Text="observação"/>
-                <Label Text="{Binding Observacao}" TextColor="#02C39A" FontSize="20"/>
+                <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}" TextColor="#02C39A" FontSize="20"/>
                 <Label Text="dias de aguar"/>
-                <Label IsVisible="{Binding DiaUmX}" Text="{Binding DiaUm}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaDoisX}" Text="{Binding DiaDois}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaTresX}" Text="{Binding DiaTres}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaQuatroX}" Text="{Binding DiaQuatro}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaCincoX}" Text="{Binding DiaCinco}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaSeisX}" Text="{Binding DiaSeis}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaSeteX}" Text="{Binding DiaSete}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaUmX}" Text="{Binding DiaUm, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaDoisX}" Text="{Binding DiaDois, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaTresX}" Text="{Binding DiaTres, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaQuatroX}" Text="{Binding DiaQuatro, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaCincoX}" Text="{Binding DiaCinco, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaSeisX}" Text="{Binding DiaSeis, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label IsVisible="{Binding DiaSeteX}" Text="{Binding DiaSete, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

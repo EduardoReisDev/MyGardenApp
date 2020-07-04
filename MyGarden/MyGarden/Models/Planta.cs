@@ -20,5 +20,6 @@ namespace MyGarden.Models
         public string DiaCinco { get; set; }
         public string DiaSeis { get; set; }
         public string DiaSete { get; set; }
+        public string Imagem { get; set; }
     }
 }
