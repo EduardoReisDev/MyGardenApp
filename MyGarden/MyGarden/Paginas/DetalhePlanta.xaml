@@ -16,13 +16,13 @@
                 <Label Text="observação"/>
                 <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}" TextColor="#02C39A" FontSize="20"/>
                 <Label Text="dias de aguar"/>
-                <Label IsVisible="{Binding DiaUmX}" Text="{Binding DiaUm, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaDoisX}" Text="{Binding DiaDois, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaTresX}" Text="{Binding DiaTres, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaQuatroX}" Text="{Binding DiaQuatro, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaCincoX}" Text="{Binding DiaCinco, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaSeisX}" Text="{Binding DiaSeis, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                <Label IsVisible="{Binding DiaSeteX}" Text="{Binding DiaSete, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaUm" Text="{Binding DiaUm}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaDois" Text="{Binding DiaDois}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaTres" Text="{Binding DiaTres}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaCinco" Text="{Binding DiaCinco}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaSeis" Text="{Binding DiaSeis}" TextColor="#02C39A" FontSize="20"/>
+                <Label x:Name="DiaSete" Text="{Binding DiaSete}" TextColor="#02C39A" FontSize="20"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
