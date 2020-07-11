@@ -49,7 +49,7 @@ namespace MyGarden.Paginas
             await Navigation.PushAsync(new CadastroPlanta());
         }
 
-        public void EditarAction(object sender, EventArgs args)
+        async void EditarAction(object sender, EventArgs args)
         {
             Image btnEditar = (Image)sender;
             TapGestureRecognizer tapGest = (TapGestureRecognizer)btnEditar.GestureRecognizers[0];
@@ -57,7 +57,7 @@ namespace MyGarden.Paginas
             Navigation.PushAsync(new EditarPlanta(planta));
         }
 
-        public async void ExcluirAction(object sender, EventArgs args)
+        async void ExcluirAction(object sender, EventArgs args)
         {
             string action = await DisplayActionSheet("Atenção, você deseja excluir essa planta?", "Cancel", null, "Sim, quero excluir.", "Não");
             if (action == "Sim, quero excluir.")
