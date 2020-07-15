@@ -10,7 +10,7 @@ namespace MyGarden
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Paginas.Home());
+            MainPage = new NavigationPage(new Paginas.BemVindo());
         }
 
         protected override void OnStart()
