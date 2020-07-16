@@ -9,8 +9,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Margin="20,40,20,20">
-                <Label Text="Seja" TextColor="#808080" FontSize="30"/>
-                <Label Text="Bem-vindo." TextColor="#00A896" FontSize="30"/>
+                <Label Text="Seja bem-vindo." TextColor="#00A896" FontSize="30"/>
                 <Label Text="Com o aplicativo MyGarden você conseguirá acompanhar o desenvolvimento de todas as suas plantinhas."/>
             </StackLayout>
             <Image Source="imagem2.png" WidthRequest="300"/>

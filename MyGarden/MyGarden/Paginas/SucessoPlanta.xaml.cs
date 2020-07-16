@@ -10,16 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace MyGarden.Paginas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BemVindo : ContentPage
+    public partial class SucessoPlanta : ContentPage
     {
-        public BemVindo()
+        public SucessoPlanta()
         {
             InitializeComponent();
-        }
-
-        public async void GoTermos(object sender, EventArgs args)
-        {
-            await Navigation.PushAsync(new Termos());
         }
 
         public async void GoHome(object sender, EventArgs args)

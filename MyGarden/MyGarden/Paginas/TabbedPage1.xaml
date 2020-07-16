@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:MyGarden.Paginas"
+             mc:Ignorable="d"
+             x:Class="MyGarden.Paginas.TabbedPage1"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom"
+             NavigationPage.HasNavigationBar="False">
+    
+  <!--Pages can be added as references or inline-->
+    <local:Home Title="Minhas Plantas" IconImageSource="MinhasPlantas.png"/>
+    <local:Termos Title="Lista" IconImageSource="Lista.png"/>
+    <local:BemVindo Title="Opções" IconImageSource="more.png"/>
+</TabbedPage>

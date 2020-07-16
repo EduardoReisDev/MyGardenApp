@@ -136,10 +136,8 @@ namespace MyGarden.Paginas
             Database database = new Database();
             database.Cadastro(planta);
 
-            DisplayAlert("MyGarden", "Parabéns, planta cadastrada com sucesso!", "Ótimo");
-
-            //Voltar para tela de pesquisa
-            App.Current.MainPage = new NavigationPage(new Home());
+            //Tela de sucesso
+            App.Current.MainPage = new NavigationPage(new SucessoPlanta());
         }
     }
 }

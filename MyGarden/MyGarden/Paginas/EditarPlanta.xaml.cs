@@ -88,12 +88,12 @@ namespace MyGarden.Paginas
 
             DisplayAlert("MyGarden","Parabéns, planta editada com sucesso!", "Ótimo");
 
-            App.Current.MainPage = new NavigationPage(new Home());
+            App.Current.MainPage = new NavigationPage(new TabbedPage1());
         }
 
         public void GoHome(object sender, EventArgs args) 
         {
-            App.Current.MainPage = new NavigationPage(new Home());
+            App.Current.MainPage = new NavigationPage(new TabbedPage1());
         }
     }
 }
