@@ -54,7 +54,7 @@ namespace MyGarden.Paginas
             Image btnEditar = (Image)sender;
             TapGestureRecognizer tapGest = (TapGestureRecognizer)btnEditar.GestureRecognizers[0];
             Planta planta = tapGest.CommandParameter as Planta;
-            Navigation.PushAsync(new EditarPlanta(planta));
+            await Navigation.PushAsync(new EditarPlanta(planta));
         }
 
         async void ExcluirAction(object sender, EventArgs args)

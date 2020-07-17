@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
+             mc:Ignorable="d"
+             x:Class="MyGarden.Paginas.ListaPlanta">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#FFFFFF">
+                <StackLayout BackgroundColor="#f2f2f2">
+                    <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
+                        <Image Source="LogoMyGarden.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
+                        <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="100" HorizontalOptions="EndAndExpand" Clicked="GoCadastro"/>
+                    </StackLayout>
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,20">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Source="search.png" WidthRequest="10" Margin="10,0,0,0"/>
+                            <Controls:XEntry Grid.Column="1" Placeholder="Busque na sua lista" PlaceholderColor="#9f9fa6" TextColor="#02C39A" TextChanged="PesquisarAction"/>
+                        </Grid>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="10,0,0,0" Orientation="Horizontal">
+                    <Label Text="" x:Name="LblCount"/>
+                    <Label Text="plantas na sua lista"/>
+                </StackLayout>
+                <ListView x:Name="ListaPlantas" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="30"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0">
+                                            <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
+                                            <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
+                                        </StackLayout>
+                                        <StackLayout Grid.Column="1" VerticalOptions="EndAndExpand">
+                                            <Image Source="pen.png" WidthRequest="25">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="bin.png" WidthRequest="25" Margin="0,10,0,10">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

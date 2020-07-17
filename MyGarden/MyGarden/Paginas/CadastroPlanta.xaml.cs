@@ -23,7 +23,7 @@ namespace MyGarden.Paginas
         string dia5 = null;
         string dia6 = null;
         string dia7 = null;
-        string NomeArquivo;
+        string NomeArquivo = null;
 
         public CadastroPlanta()
         {
