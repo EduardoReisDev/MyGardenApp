@@ -6,7 +6,7 @@ using SQLite;
 namespace MyGarden.Models
 {
     [Table("PlantaLista")]
-    class PlantaLista
+    public class PlantaLista
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }

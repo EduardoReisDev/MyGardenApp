@@ -45,15 +45,10 @@
                                             <ColumnDefinition Width="30"/>
                                         </Grid.ColumnDefinitions>
                                         <StackLayout Grid.Column="0">
-                                            <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
-                                            <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
+                                            <Label Text="{Binding NomePopularPL, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
+                                            <Label Text="{Binding NomeCientificoPL, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
                                         </StackLayout>
                                         <StackLayout Grid.Column="1" VerticalOptions="EndAndExpand">
-                                            <Image Source="pen.png" WidthRequest="25">
-                                                <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
-                                                </Image.GestureRecognizers>
-                                            </Image>
                                             <Image Source="bin.png" WidthRequest="25" Margin="0,10,0,10">
                                                 <Image.GestureRecognizers>
                                                     <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>

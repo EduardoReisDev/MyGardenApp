@@ -2,14 +2,34 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
-             x:Class="MyGarden.Paginas.ListaPlantaCadastro">
+             x:Class="MyGarden.Paginas.ListaPlantaCadastro"
+             NavigationPage.IconColor="#000000">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout BackgroundColor="#f2f2f2">
+                <Label Text="Lista de desejo" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25"/>
+                <StackLayout Margin="10,10,10,0">
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
+                        <Controls:XEntry x:Name="NomePopularPL" Placeholder="Nome popular" PlaceholderColor="#9f9fa6"/>
+                    </Frame>
+                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
+                        <Controls:XEntry x:Name="NomeCientificoPL" Placeholder="Nome científico" PlaceholderColor="#9f9fa6"/>
+                    </Frame>
+                    <Grid Margin="10, 5,10,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080" Clicked="GoHome"/>
+                        <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="SalvarAction"/>
+                    </Grid>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
