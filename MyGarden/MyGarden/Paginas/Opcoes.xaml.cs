@@ -30,7 +30,7 @@ namespace MyGarden.Paginas
 
         public async void GoSair(object sender, EventArgs args)
         {
-            string action = await DisplayActionSheet("Sair do MyGarden?", "Cancel", null, "Sim, quero sair.", "Não");
+            string action = await DisplayActionSheet("Sair do MyGarden?", "Cancelar", null, "Sim, quero sair.", "Não");
             if (action == "Sim, quero sair.")
             {
                 JavaSystem.Exit(0);
