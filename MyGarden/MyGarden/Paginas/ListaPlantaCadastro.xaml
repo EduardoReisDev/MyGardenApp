@@ -5,11 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.ListaPlantaCadastro"
-             NavigationPage.IconColor="#000000">
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#f2f2f2">
-                <Label Text="Lista de desejo" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25"/>
+                <Label Text="Lista de desejo" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25" Margin="0,10,0,0"/>
                 <StackLayout Margin="10,10,10,0">
                     <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
                         <Controls:XEntry x:Name="NomePopularPL" Placeholder="Nome popular" PlaceholderColor="#9f9fa6"/>

@@ -29,7 +29,7 @@
                 </StackLayout>
                 <StackLayout Margin="10,0,0,0" Orientation="Horizontal">
                     <Label Text="" x:Name="LblCount"/>
-                    <Label Text="plantas na sua lista"/>
+                    <Label Text="plantas na sua lista de desejo"/>
                 </StackLayout>
                 <ListView x:Name="ListaPlantas" HasUnevenRows="True">
                     <ListView.ItemTemplate>

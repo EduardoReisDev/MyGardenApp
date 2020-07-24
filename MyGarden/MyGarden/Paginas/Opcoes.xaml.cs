@@ -18,11 +18,13 @@ namespace MyGarden.Paginas
             InitializeComponent();
         }
 
+        [Obsolete]
         public void GoFeedback (object sender, EventArgs args)
         {
             Device.OpenUri(new Uri("mailto:eduardoreisdev@gmail.com?subject=MyGarden_Feedback"));
         }
 
+        [Obsolete]
         public void GoAvalieApp(object sender, EventArgs args)
         {
             Device.OpenUri(new Uri("https://play.google.com/store?hl=pt_BR"));

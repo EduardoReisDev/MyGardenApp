@@ -11,6 +11,6 @@
     
   <!--Pages can be added as references or inline-->
     <local:Home Title="Minhas Plantas" IconImageSource="MinhasPlantas.png"/>
-    <local:ListaPlanta Title="Lista" IconImageSource="Lista.png"/>
+    <local:ListaPlanta Title="Lista de desejo" IconImageSource="Lista.png"/>
     <local:Opcoes Title="Opções" IconImageSource="more.png"/>
 </TabbedPage>

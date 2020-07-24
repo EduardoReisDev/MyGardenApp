@@ -12,7 +12,7 @@
     <!-- Set theme colors from https://aka.ms/material-colors -->
     <item name="android:windowLightStatusBar">true</item>
     <!-- colorPrimary is used for the default action bar background -->
-    <item name="colorPrimary">#F5F5F5</item>
+    <item name="colorPrimary">#737373</item>
     <!-- colorPrimaryDark is used for the status bar -->
     <item name="colorPrimaryDark">#FFFFFF</item>
     <!-- colorAccent is used as the default value for colorControlActivated
