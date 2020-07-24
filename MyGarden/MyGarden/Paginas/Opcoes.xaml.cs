@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Java.Lang;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,29 @@ namespace MyGarden.Paginas
         public Opcoes()
         {
             InitializeComponent();
+        }
+
+        public void GoFeedback (object sender, EventArgs args)
+        {
+            Device.OpenUri(new Uri("mailto:eduardoreisdev@gmail.com?subject=MyGarden_Feedback"));
+        }
+
+        public void GoAvalieApp(object sender, EventArgs args)
+        {
+            Device.OpenUri(new Uri("https://play.google.com/store?hl=pt_BR"));
+        }
+
+        public async void GoSair(object sender, EventArgs args)
+        {
+            string action = await DisplayActionSheet("Sair do MyGarden?", "Cancel", null, "Sim, quero sair.", "Não");
+            if (action == "Sim, quero sair.")
+            {
+                JavaSystem.Exit(0);
+            }
+            else
+            {
+                await Navigation.PushAsync(new TabbedPage1());
+            }
         }
     }
 }
