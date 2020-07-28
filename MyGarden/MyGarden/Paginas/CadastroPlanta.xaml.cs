@@ -32,7 +32,7 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PushAsync(new TabbedPage1());
         }
 
         public void BtnSegunda(object sender, ToggledEventArgs e)
@@ -70,6 +70,7 @@ namespace MyGarden.Paginas
             dia7 = "Domingo";
         }
 
+        /*
         public async void AbrirCamera(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
@@ -93,6 +94,7 @@ namespace MyGarden.Paginas
                 await DisplayAlert("Alerta", "Nenhum arquivo selecionado", "OK");
             }
         }
+        */
 
         public async void AbrirGaleria(object sender, EventArgs args)
         {
@@ -108,6 +110,7 @@ namespace MyGarden.Paginas
             var arquivo = await CrossMedia.Current.PickPhotoAsync();
 
             string NomeArquivo = arquivo.AlbumPath;
+
             await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
 
             if (arquivo == null)

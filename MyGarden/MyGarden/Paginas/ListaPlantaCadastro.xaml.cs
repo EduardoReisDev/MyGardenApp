@@ -21,7 +21,7 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PushAsync(new TabbedPage1());
         }
 
         public async void SalvarAction(object sender, EventArgs args)

@@ -62,10 +62,12 @@
                             <ImageButton Source="galeria.png" WidthRequest="40" Clicked="AbrirGaleria" BackgroundColor="Transparent"/>
                             <Label Text="Galeria" VerticalOptions="CenterAndExpand"/>
                         </StackLayout>
+                        <!--
                         <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                             <ImageButton Source="camera.png" WidthRequest="40" Clicked="AbrirCamera" BackgroundColor="Transparent"/>
                             <Label Text="Camera" VerticalOptions="CenterAndExpand"/>
                         </StackLayout>
+                        -->
                     </Grid>
                     <Grid Margin="10, 5,10,5">
                         <Grid.RowDefinitions>

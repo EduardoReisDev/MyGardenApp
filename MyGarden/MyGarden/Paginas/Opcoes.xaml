@@ -7,46 +7,47 @@
              x:Class="MyGarden.Paginas.Opcoes">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Opções" HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="#000000" FontAttributes="Bold" Margin="20"/>
+            <Label Text="Opções" HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="#000000" FontAttributes="Bold"/>
 
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Image Source="about.png" WidthRequest="25"/>
-                <Label Text="Como funciona" FontSize="18" TextColor="#000000"/>
+            <StackLayout Margin="10">
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Image Source="about.png" WidthRequest="25"/>
+                    <Label Text="Como funciona" FontSize="18" TextColor="#000000"/>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Image Source="mail.png" WidthRequest="25"/>
+                    <Label Text="Dar feedback" FontSize="18" TextColor="#000000"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoFeedback"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Image Source="star.png" WidthRequest="25"/>
+                    <Label Text="Avalie o App" FontSize="18" TextColor="#000000"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoAvalieApp"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Image Source="privacy.png" WidthRequest="25"/>
+                    <Label Text="Política de privacidade" FontSize="18" TextColor="#000000"/>
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Image Source="exit.png" WidthRequest="25"/>
+                    <Label Text="Sair" FontSize="18" TextColor="#000000"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoSair"/>
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
             </StackLayout>
-
-
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Image Source="mail.png" WidthRequest="25"/>
-                <Label Text="Dar feedback" FontSize="18" TextColor="#000000"/>
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoFeedback"/>
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
-
-
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Image Source="star.png" WidthRequest="25"/>
-                <Label Text="Avalie o App" FontSize="18" TextColor="#000000"/>
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoAvalieApp"/>
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
-
-
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Image Source="privacy.png" WidthRequest="25"/>
-                <Label Text="Política de privacidade" FontSize="18" TextColor="#000000"/>
-            </StackLayout>
-
-
-            <StackLayout Orientation="Horizontal" Margin="5">
-                <Image Source="exit.png" WidthRequest="25"/>
-                <Label Text="Sair" FontSize="18" TextColor="#000000"/>
-                <StackLayout.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoSair"/>
-                </StackLayout.GestureRecognizers>
-            </StackLayout>
-            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

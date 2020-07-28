@@ -44,7 +44,7 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="30"/>
                                         </Grid.ColumnDefinitions>
-                                        <StackLayout Grid.Column="0">
+                                        <StackLayout Grid.Column="0" Padding="5">
                                             <Label Text="{Binding NomePopularPL, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
                                             <Label Text="{Binding NomeCientificoPL, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
                                         </StackLayout>
