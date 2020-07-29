@@ -109,7 +109,7 @@ namespace MyGarden.Paginas
 
             var arquivo = await CrossMedia.Current.PickPhotoAsync();
 
-            string NomeArquivo = arquivo.AlbumPath;
+            NomeArquivo = arquivo.AlbumPath;
 
             await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
 

@@ -30,6 +30,16 @@ namespace MyGarden.Paginas
             Device.OpenUri(new Uri("https://play.google.com/store?hl=pt_BR"));
         }
 
+        public async void GoTermos(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new Termos());
+        }
+
+        public async void GoHelp(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new ComoFunciona());
+        }
+
         public async void GoSair(object sender, EventArgs args)
         {
             string action = await DisplayActionSheet("Sair do MyGarden?", "Cancelar", null, "Sim, quero sair.", "Não");

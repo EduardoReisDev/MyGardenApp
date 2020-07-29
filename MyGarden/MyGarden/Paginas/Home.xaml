@@ -49,11 +49,16 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="30"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image Source="{Binding Imagem}" Aspect="AspectFill"/>
+                                        <Image Aspect="AspectFill">
+                                            <Image.Source>
+                                                <UriImageSource Uri="{Binding Imagem}"/>
+                                            </Image.Source>
+                                        </Image>
                                         <StackLayout Grid.Column="1">
                                             <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
                                             <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
                                             <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}"/>
+                                            <Label Text="{Binding Imagem}"/>
                                             <StackLayout Orientation="Horizontal">
                                                 <Label x:Name="DiaUm" Text="{Binding DiaUm}"/>
                                                 <Label x:Name="DiaDois" Text="{Binding DiaDois}"/>

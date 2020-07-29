@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="MyGarden.Paginas.ComoFunciona"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="arrow.png" WidthRequest="50" HorizontalOptions="StartAndExpand" Margin="10">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="GoHome"/>
+                </Image.GestureRecognizers>
+            </Image>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

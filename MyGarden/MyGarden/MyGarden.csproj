@@ -24,10 +24,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Paginas\BemVindo.xaml">
+    <EmbeddedResource Update="Paginas\CadastroPlanta.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Paginas\CadastroPlanta.xaml">
+    <EmbeddedResource Update="Paginas\ComoFunciona.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Paginas\DetalhePlanta.xaml">

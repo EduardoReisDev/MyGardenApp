@@ -13,6 +13,9 @@
                 <StackLayout Orientation="Horizontal" Margin="5">
                     <Image Source="about.png" WidthRequest="25"/>
                     <Label Text="Como funciona" FontSize="18" TextColor="#000000"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoHelp"/>
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
 
 
@@ -37,6 +40,9 @@
                 <StackLayout Orientation="Horizontal" Margin="5">
                     <Image Source="privacy.png" WidthRequest="25"/>
                     <Label Text="Política de privacidade" FontSize="18" TextColor="#000000"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoTermos"/>
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
 
 

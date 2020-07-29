@@ -28,6 +28,11 @@ namespace MyGarden.Paginas
             BindingContext = planta;
         }
 
+        public async void GoHome(object sender, EventArgs args)
+        {
+            await Navigation.PushAsync(new TabbedPage1());
+        }
+
         public void VerificaDiaUm(Planta planta)
         {
             if (planta.DiaUm == null)
