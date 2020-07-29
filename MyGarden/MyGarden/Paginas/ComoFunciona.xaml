@@ -7,13 +7,28 @@
              x:Class="MyGarden.Paginas.ComoFunciona"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Image Source="arrow.png" WidthRequest="50" HorizontalOptions="StartAndExpand" Margin="10">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoHome"/>
-                </Image.GestureRecognizers>
-            </Image>
-            
-        </StackLayout>
+        <ScrollView>
+            <StackLayout>
+                
+                <Image Source="arrow.png" WidthRequest="40" HorizontalOptions="StartAndExpand" Margin="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoHome"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <Label Text="Como funciona?" Margin="10,0,0,0" TextColor="#000000" FontSize="20"/>
+
+                <StackLayout Margin="10">
+
+                    <Label Text="Minhas plantas" TextColor="#000000" FontSize="15"/>
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor arcu dui, non rhoncus mauris tincidunt eu. Vestibulum suscipit interdum gravida. Integer interdum mauris ut nibh pharetra, eu tristique tellus fringilla."/>
+                    <Image Source="mockup1.png"/>
+                    <Label Text="Lista de desejos" TextColor="#000000" FontSize="15"/>
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor arcu dui, non rhoncus mauris tincidunt eu. Vestibulum suscipit interdum gravida. Integer interdum mauris ut nibh pharetra, eu tristique tellus fringilla."/>
+                    <Image Source="mockup2.png"/>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
