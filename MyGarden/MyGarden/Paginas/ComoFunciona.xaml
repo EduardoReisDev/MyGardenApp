@@ -21,10 +21,10 @@
                 <StackLayout Margin="10">
 
                     <Label Text="Minhas plantas" TextColor="#000000" FontSize="15"/>
-                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor arcu dui, non rhoncus mauris tincidunt eu. Vestibulum suscipit interdum gravida. Integer interdum mauris ut nibh pharetra, eu tristique tellus fringilla."/>
+                    <Label Text="No menu Minhas plantas, você conseguirá acompanhar todas as plantas presentes no seu jardim. Você irá cadastrar as suas plantas com o nome popular, nome científico, a observação que você preferir, uma foto e os dias que será que você irá regar sua planta."/>
                     <Image Source="mockup1.png"/>
                     <Label Text="Lista de desejos" TextColor="#000000" FontSize="15"/>
-                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor arcu dui, non rhoncus mauris tincidunt eu. Vestibulum suscipit interdum gravida. Integer interdum mauris ut nibh pharetra, eu tristique tellus fringilla."/>
+                    <Label Text="Você já ficou de olho em uma planta, guardou o nome dela para depois adquiri la, mas depois de um certo tempo você o esqueceu? O menu de Lista de Desejo está para sanar esse problema. Nele você irá cadastrar as próximas plantinhas que você deseja ter no seu jardim."/>
                     <Image Source="mockup2.png"/>
                 </StackLayout>
 

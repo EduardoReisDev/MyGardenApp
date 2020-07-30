@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
-             x:Class="MyGarden.Paginas.EditarPlanta">
+             x:Class="MyGarden.Paginas.EditarPlanta"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <ScrollView>
@@ -59,6 +60,24 @@
 
                             <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
                             <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
+                        </Grid>
+
+                        <Grid Margin="10, 5,10,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <StackLayout Grid.Column="0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <ImageButton Source="galeria.png" WidthRequest="40" Clicked="AbrirGaleria" BackgroundColor="Transparent"/>
+                                <Label Text="Galeria" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
+                            <StackLayout Grid.Column="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <ImageButton Source="camera.png" WidthRequest="40" Clicked="AbrirCamera" BackgroundColor="Transparent"/>
+                                <Label Text="Camera" VerticalOptions="CenterAndExpand"/>
+                            </StackLayout>
                         </Grid>
 
                         <Grid Margin="10, 5,10,5">

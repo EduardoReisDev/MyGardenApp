@@ -49,25 +49,15 @@
                                             <ColumnDefinition Width="*"/>
                                             <ColumnDefinition Width="30"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image Aspect="AspectFill">
+                                        <Image HeightRequest="50" Aspect="AspectFill">
                                             <Image.Source>
-                                                <UriImageSource Uri="{Binding Imagem}"/>
+                                                <FileImageSource File="{Binding Imagem}"/>
                                             </Image.Source>
                                         </Image>
-                                        <StackLayout Grid.Column="1">
+                                        <StackLayout Grid.Column="1" Margin="0,10,0,10">
                                             <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
                                             <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
                                             <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}"/>
-                                            <Label Text="{Binding Imagem}"/>
-                                            <StackLayout Orientation="Horizontal">
-                                                <Label x:Name="DiaUm" Text="{Binding DiaUm}"/>
-                                                <Label x:Name="DiaDois" Text="{Binding DiaDois}"/>
-                                                <Label x:Name="DiaTres" Text="{Binding DiaTres}"/>
-                                                <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro}"/>
-                                                <Label x:Name="DiaCinco" Text="{Binding DiaCinco}"/>
-                                                <Label x:Name="DiaSeis" Text="{Binding DiaSeis}"/>
-                                                <Label x:Name="DiaSete" Text="{Binding DiaSete}"/>
-                                            </StackLayout>
                                         </StackLayout>
                                         <StackLayout Grid.Column="2" VerticalOptions="EndAndExpand">
                                             <Image Source="pen.png" WidthRequest="25">

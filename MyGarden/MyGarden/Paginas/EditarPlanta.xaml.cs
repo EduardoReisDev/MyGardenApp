@@ -9,6 +9,8 @@ using Xamarin.Forms.Xaml;
 using MyGarden.Banco;
 using MyGarden.Models;
 using Xamarin.Essentials;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
 
 namespace MyGarden.Paginas
 {
@@ -24,6 +26,7 @@ namespace MyGarden.Paginas
         string dia5 = null;
         string dia6 = null;
         string dia7 = null;
+        string NomeArquivo = null;
 
         public void BtnSegunda(object sender, ToggledEventArgs e)
         {
@@ -68,6 +71,60 @@ namespace MyGarden.Paginas
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
             Observacao.Text = planta.Observacao;
+        }
+
+        public async void AbrirCamera(object sender, EventArgs e)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await DisplayAlert("Nenhuma Câmera", ":( Nenuma Câmera disponível.", "OK");
+                return;
+            }
+
+            var arquivo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                CompressionQuality = 40,
+                SaveToAlbum = true,
+            });
+
+            NomeArquivo = arquivo.Path;
+
+            await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
+
+            if (arquivo == null)
+            {
+                await DisplayAlert("Alerta", "Nenhum arquivo selecionado", "OK");
+            }
+        }
+
+
+        public async void AbrirGaleria(object sender, EventArgs args)
+        {
+            await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Ops", "Galeria de fotos não suportada.", "OK");
+
+                return;
+            }
+
+            var arquivo = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                CompressionQuality = 40
+
+            });
+
+            NomeArquivo = arquivo.Path;
+
+            await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
+
+            if (arquivo == null)
+                return;
         }
 
         public void Salvar(object sender, EventArgs args)

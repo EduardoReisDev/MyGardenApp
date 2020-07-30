@@ -70,7 +70,7 @@ namespace MyGarden.Paginas
             dia7 = "Domingo";
         }
 
-        /*
+        
         public async void AbrirCamera(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
@@ -83,10 +83,13 @@ namespace MyGarden.Paginas
 
             var arquivo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                CompressionQuality = 40,
                 SaveToAlbum = true,
             });
 
-            string NomeArquivo = arquivo.AlbumPath;
+            NomeArquivo = arquivo.Path;
+
             await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
 
             if (arquivo == null)
@@ -94,7 +97,7 @@ namespace MyGarden.Paginas
                 await DisplayAlert("Alerta", "Nenhum arquivo selecionado", "OK");
             }
         }
-        */
+        
 
         public async void AbrirGaleria(object sender, EventArgs args)
         {
@@ -107,9 +110,14 @@ namespace MyGarden.Paginas
                 return;
             }
 
-            var arquivo = await CrossMedia.Current.PickPhotoAsync();
+            var arquivo = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            { 
+                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                CompressionQuality = 40
+                
+            });
 
-            NomeArquivo = arquivo.AlbumPath;
+            NomeArquivo = arquivo.Path;
 
             await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
 

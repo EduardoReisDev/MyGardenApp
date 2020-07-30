@@ -7,28 +7,35 @@
              x:Class="MyGarden.Paginas.DetalhePlanta"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="#f2f2f2">
-            <Image Source="arrow.png" WidthRequest="50" HorizontalOptions="StartAndExpand" Margin="10">
-                <Image.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="GoHome"/>
-                </Image.GestureRecognizers>
-            </Image>
-            <StackLayout Margin="20,0,20,0">
-                <Label Text="nome popular"/>
-                <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" TextColor="#02C39A" FontSize="20"/>
-                <Label Text="nome científico"/>
-                <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" TextColor="#02C39A" FontSize="20"/>
-                <Label Text="observação"/>
-                <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}" TextColor="#02C39A" FontSize="20"/>
-                <Label Text="dias de aguar"/>
-                <Label x:Name="DiaUm" Text="{Binding DiaUm}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaDois" Text="{Binding DiaDois}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaTres" Text="{Binding DiaTres}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaCinco" Text="{Binding DiaCinco}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaSeis" Text="{Binding DiaSeis}" TextColor="#02C39A" FontSize="20"/>
-                <Label x:Name="DiaSete" Text="{Binding DiaSete}" TextColor="#02C39A" FontSize="20"/>
+        <ScrollView>
+            <StackLayout BackgroundColor="#f2f2f2">
+                <Image Source="arrow.png" WidthRequest="40" HorizontalOptions="StartAndExpand" Margin="10">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoHome"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <StackLayout Margin="20,0,20,0">
+                    <Label Text="nome popular" />
+                    <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label Text="nome científico"/>
+                    <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label Text="observação"/>
+                    <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}" TextColor="#02C39A" FontSize="20"/>
+                    <Image WidthRequest="250">
+                        <Image.Source>
+                            <FileImageSource File="{Binding Imagem}"/>
+                        </Image.Source>
+                    </Image>
+                    <Label Text="dias de aguar"/>
+                    <Label x:Name="DiaUm" Text="{Binding DiaUm, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaDois" Text="{Binding DiaDois, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaTres" Text="{Binding DiaTres, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaCinco" Text="{Binding DiaCinco, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaSeis" Text="{Binding DiaSeis, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                    <Label x:Name="DiaSete" Text="{Binding DiaSete, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>
