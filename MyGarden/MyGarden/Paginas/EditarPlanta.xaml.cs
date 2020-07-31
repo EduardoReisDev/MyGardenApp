@@ -139,6 +139,7 @@ namespace MyGarden.Paginas
             planta.DiaCinco = dia5;
             planta.DiaSeis = dia6;
             planta.DiaSete = dia7;
+            planta.Imagem = NomeArquivo;
 
             Database database = new Database();
             database.Atualizacao(planta);
