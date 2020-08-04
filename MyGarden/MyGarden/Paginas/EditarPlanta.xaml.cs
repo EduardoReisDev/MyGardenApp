@@ -129,6 +129,16 @@ namespace MyGarden.Paginas
 
         public void Salvar(object sender, EventArgs args)
         {
+            if(NomeArquivo == null)
+            {
+                NomeArquivo = planta.Imagem;
+            }
+
+            else
+            {
+                planta.Imagem = NomeArquivo;
+            }
+
             planta.NomePopular = NomePopular.Text;
             planta.NomeCientifico = NomeCientifico.Text;
             planta.Observacao = Observacao.Text;
@@ -149,9 +159,9 @@ namespace MyGarden.Paginas
             App.Current.MainPage = new NavigationPage(new TabbedPage1());
         }
 
-        public void GoHome(object sender, EventArgs args) 
+        public async void GoHome(object sender, EventArgs args) 
         {
-            App.Current.MainPage = new NavigationPage(new TabbedPage1());
+            await Navigation.PushAsync(new TabbedPage1());
         }
     }
 }
