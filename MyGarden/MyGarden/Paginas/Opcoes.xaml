@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="MyGarden.Paginas.Opcoes">
+             x:Class="MyGarden.Paginas.Opcoes"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Opções" HorizontalOptions="CenterAndExpand" FontSize="20" TextColor="#000000" FontAttributes="Bold"/>
@@ -52,6 +53,10 @@
                     <StackLayout.GestureRecognizers>
                         <TapGestureRecognizer Tapped="GoSair"/>
                     </StackLayout.GestureRecognizers>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="5">
+                    <Label Text="v"/>
                 </StackLayout>
             </StackLayout>
         </StackLayout>

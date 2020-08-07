@@ -21,7 +21,8 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TabbedPage1());
+            //cancelar
+            await Navigation.PushAsync(new ListaPlanta());
         }
 
         public async void SalvarAction(object sender, EventArgs args)
@@ -40,7 +41,7 @@ namespace MyGarden.Paginas
             await DisplayAlert("MyGarden", "Planta adicionada na minha lista de desejo.", "OK");
 
             //Tela de sucesso
-            App.Current.MainPage = new NavigationPage(new TabbedPage1());
+            await Navigation.PushAsync(new ListaPlanta());
         }
     }
 }

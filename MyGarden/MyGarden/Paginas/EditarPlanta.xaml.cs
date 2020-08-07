@@ -28,48 +28,218 @@ namespace MyGarden.Paginas
         string dia7 = null;
         string NomeArquivo = null;
 
+        public void DiaUmVerifica(Planta planta)
+        {
+            if (planta.DiaUm == "Segunda")
+            {
+                DiaUm.IsToggled = true;
+            }
+
+            else
+            {
+                DiaUm.IsToggled = false;
+            }
+        }
+
+        public void DiaDoisVerifica(Planta planta)
+        {
+            if (planta.DiaDois == "Terca")
+            {
+                DiaDois.IsToggled = true;
+            }
+
+            else
+            {
+                DiaDois.IsToggled = false;
+            }
+        }
+
+        public void DiaTresVerifica(Planta planta)
+        {
+            if (planta.DiaTres == "Quarta")
+            {
+                DiaTres.IsToggled = true;
+            }
+
+            else
+            {
+                DiaTres.IsToggled = false;
+            }
+        }
+
+        public void DiaQuatroVerifica(Planta planta)
+        {
+            if (planta.DiaQuatro == "Quinta")
+            {
+                DiaQuatro.IsToggled = true;
+            }
+
+            else
+            {
+                DiaQuatro.IsToggled = false;
+            }
+        }
+
+        public void DiaCincoVerifica(Planta planta)
+        {
+            if (planta.DiaCinco == "Sexta")
+            {
+                DiaCinco.IsToggled = true;
+            }
+
+            else
+            {
+                DiaCinco.IsToggled = false;
+            }
+        }
+
+        public void DiaSeisVerifica(Planta planta)
+        {
+            if (planta.DiaSeis == "Sabado")
+            {
+                DiaSeis.IsToggled = true;
+            }
+
+            else
+            {
+                DiaSeis.IsToggled = false;
+            }
+        }
+
+        public void DiaSeteVerifica(Planta planta)
+        {
+            if (planta.DiaSete == "Domingo")
+            {
+                DiaSete.IsToggled = true;
+            }
+
+            else
+            {
+                DiaSete.IsToggled = false;
+            }
+        }
+
         public void BtnSegunda(object sender, ToggledEventArgs e)
         {
-            dia1 = "Segunda";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia1 = "Segunda";
+            }
+
+            else
+            {
+                dia1 = null;
+            }
         }
 
         public void BtnTerca(object sender, ToggledEventArgs e)
         {
-            dia2 = "Terca";
+
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia2 = "Terca";
+            }
+
+            else
+            {
+                dia2 = null;
+            }
         }
 
         public void BtnQuarta(object sender, ToggledEventArgs e)
         {
-            dia3 = "Quarta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia3 = "Quarta";
+            }
+
+            else
+            {
+                dia3 = null;
+            }
         }
 
         public void BtnQuinta(object sender, ToggledEventArgs e)
         {
-            dia4 = "Quinta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia4 = "Quinta";
+            }
+
+            else
+            {
+                dia4 = null;
+            }
         }
 
         public void BtnSexta(object sender, ToggledEventArgs e)
         {
-            dia5 = "Sexta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia5 = "Sexta";
+            }
+
+            else
+            {
+                dia5 = null;
+            }
         }
 
         public void BtnSabado(object sender, ToggledEventArgs e)
         {
-            dia6 = "Sabado";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia6 = "Sabado";
+            }
+
+            else
+            {
+                dia6 = null;
+            }
         }
 
         public void BtnDomingo(object sender, ToggledEventArgs e)
         {
-            dia7 = "Domingo";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia7 = "Domingo";
+            }
+
+            else
+            {
+                dia7 = null;
+            }
         }
 
         public EditarPlanta(Planta planta)
         {
             InitializeComponent();
             this.planta = planta;
+            DiaUmVerifica(planta);
+            DiaDoisVerifica(planta);
+            DiaTresVerifica(planta);
+            DiaQuatroVerifica(planta);
+            DiaCincoVerifica(planta);
+            DiaSeisVerifica(planta);
+            DiaSeteVerifica(planta);
 
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
+
             Observacao.Text = planta.Observacao;
         }
 
@@ -127,7 +297,7 @@ namespace MyGarden.Paginas
                 return;
         }
 
-        public void Salvar(object sender, EventArgs args)
+        public async void Salvar(object sender, EventArgs args)
         {
             if(NomeArquivo == null)
             {
@@ -154,14 +324,14 @@ namespace MyGarden.Paginas
             Database database = new Database();
             database.Atualizacao(planta);
 
-            DisplayAlert("MyGarden","Parabéns, planta editada com sucesso!", "Ótimo");
+            await DisplayAlert("MyGarden","Parabéns, planta editada com sucesso!", "Ótimo");
 
-            App.Current.MainPage = new NavigationPage(new TabbedPage1());
+            await Navigation.PushAsync(new Home());
         }
 
         public async void GoHome(object sender, EventArgs args) 
         {
-            await Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new Home());
         }
     }
 }

@@ -32,42 +32,113 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new Home());
         }
 
         public void BtnSegunda(object sender, ToggledEventArgs e)
         {
-            dia1 = "Segunda";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia1 = "Segunda";
+            }
+
+            else
+            {
+                dia1 = null;
+            }
         }
 
         public void BtnTerca(object sender, ToggledEventArgs e)
         {
-            dia2 = "Terca";
+
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia2 = "Terca";
+            }
+
+            else
+            {
+                dia2 = null;
+            }
         }
 
         public void BtnQuarta(object sender, ToggledEventArgs e)
         {
-            dia3 = "Quarta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia3 = "Quarta";
+            }
+
+            else
+            {
+                dia3 = null;
+            }
         }
 
         public void BtnQuinta(object sender, ToggledEventArgs e)
         {
-            dia4 = "Quinta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia4 = "Quinta";
+            }
+
+            else
+            {
+                dia4 = null;
+            }
         }
 
         public void BtnSexta(object sender, ToggledEventArgs e)
         {
-            dia5 = "Sexta";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia5 = "Sexta";
+            }
+
+            else
+            {
+                dia5 = null;
+            }
         }
 
         public void BtnSabado(object sender, ToggledEventArgs e)
         {
-            dia6 = "Sabado";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia6 = "Sabado";
+            }
+
+            else
+            {
+                dia6 = null;
+            }
         }
 
         public void BtnDomingo(object sender, ToggledEventArgs e)
         {
-            dia7 = "Domingo";
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                dia7 = "Domingo";
+            }
+
+            else
+            {
+                dia7 = null;
+            }
         }
 
         
@@ -125,7 +196,7 @@ namespace MyGarden.Paginas
                 return;
         }
 
-        public void SalvarAction(object sender, EventArgs args)
+        public async void SalvarAction(object sender, EventArgs args)
         {
             //Obter dados da tela
             Planta planta = new Planta
@@ -148,7 +219,7 @@ namespace MyGarden.Paginas
             database.Cadastro(planta);
 
             //Tela de sucesso
-            App.Current.MainPage = new NavigationPage(new SucessoPlanta());
+            await Navigation.PushAsync(new SucessoPlanta());
         }
     }
 }

@@ -30,7 +30,7 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new Home());
         }
 
         public void VerificaDiaUm(Planta planta)

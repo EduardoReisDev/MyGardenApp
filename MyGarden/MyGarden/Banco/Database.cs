@@ -38,9 +38,9 @@ namespace MyGarden.Banco
             return _conexao.Table<Planta>().Where(a => a.NomePopular.Contains(palavra)).ToList();
         }
 
-        public List<PlantaLista> PesquisarPL(String palavra)
+        public List<PlantaLista> PesquisarPL(String palavralista)
         {
-            return _conexao.Table<PlantaLista>().Where(a => a.NomePopularPL.Contains(palavra)).ToList();
+            return _conexao.Table<PlantaLista>().Where(a => a.NomePopularPL.Contains(palavralista)).ToList();
         }
 
         public Planta ObterVagaPorId(int id)

@@ -19,7 +19,7 @@ namespace MyGarden.Paginas
 
         public async void GoBemVindo(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new TabbedPage1());
+            await Navigation.PushAsync(new Opcoes());
         }
     }
 }

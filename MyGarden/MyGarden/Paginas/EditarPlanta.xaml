@@ -39,25 +39,25 @@
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Switch Grid.Column="0" Grid.Row="0" Toggled="BtnSegunda"/>
+                        <Switch Grid.Column="0" Grid.Row="0" Toggled="BtnSegunda" x:Name="DiaUm"/>
                         <Label Grid.Column="1" Grid.Row="0" Text="Segunda" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="2" Grid.Row="0" Toggled="BtnTerca"/>
+                        <Switch Grid.Column="2" Grid.Row="0" Toggled="BtnTerca" x:Name="DiaDois"/>
                         <Label Grid.Column="3" Grid.Row="0" Text="Terça" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="0" Grid.Row="1" Toggled="BtnQuarta"/>
+                        <Switch Grid.Column="0" Grid.Row="1" Toggled="BtnQuarta" x:Name="DiaTres"/>
                         <Label Grid.Column="1" Grid.Row="1" Text="Quarta" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="2" Grid.Row="1" Toggled="BtnQuinta"/>
+                        <Switch Grid.Column="2" Grid.Row="1" Toggled="BtnQuinta" x:Name="DiaQuatro"/>
                         <Label Grid.Column="3" Grid.Row="1" Text="Quinta" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="0" Grid.Row="2" Toggled="BtnSexta"/>
+                        <Switch Grid.Column="0" Grid.Row="2" Toggled="BtnSexta" x:Name="DiaCinco"/>
                         <Label Grid.Column="1" Grid.Row="2" Text="Sexta" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="2" Grid.Row="2" Toggled="BtnSabado"/>
+                        <Switch Grid.Column="2" Grid.Row="2" Toggled="BtnSabado" x:Name="DiaSeis"/>
                         <Label Grid.Column="3" Grid.Row="2" Text="Sábado" VerticalOptions="CenterAndExpand"/>
 
-                        <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
+                        <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo" x:Name="DiaSete"/>
                         <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
                     </Grid>
 

@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
-             x:Class="MyGarden.Paginas.ListaPlanta">
+             x:Class="MyGarden.Paginas.ListaPlanta"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout BackgroundColor="#FFFFFF">
