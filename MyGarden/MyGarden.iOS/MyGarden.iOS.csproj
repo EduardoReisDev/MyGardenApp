@@ -67,6 +67,7 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Banco\Caminho.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -128,8 +129,33 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\MyGarden\MyGarden.csproj">
-      <Project>{42AF6D31-FD4F-4653-8EA9-45AED939BCB1}</Project>
+      <Project>{62E08AA5-4A5D-4A6E-B1C8-61301054CB11}</Project>
       <Name>MyGarden</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\about.png" />
+    <BundleResource Include="Resources\arrow.png" />
+    <BundleResource Include="Resources\bin.png" />
+    <BundleResource Include="Resources\camera.png" />
+    <BundleResource Include="Resources\exit.png" />
+    <BundleResource Include="Resources\galeria.png" />
+    <BundleResource Include="Resources\imagem3.png" />
+    <BundleResource Include="Resources\Lista.png" />
+    <BundleResource Include="Resources\LogoMyGarden.png" />
+    <BundleResource Include="Resources\mail.png" />
+    <BundleResource Include="Resources\MinhasPlantas.png" />
+    <BundleResource Include="Resources\mockup1.png" />
+    <BundleResource Include="Resources\mockup2.png" />
+    <BundleResource Include="Resources\more.png" />
+    <BundleResource Include="Resources\mygardenlogo.png" />
+    <BundleResource Include="Resources\pen.png" />
+    <BundleResource Include="Resources\privacy.png" />
+    <BundleResource Include="Resources\search.png" />
+    <BundleResource Include="Resources\splash_screen.xml" />
+    <BundleResource Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Banco\" />
   </ItemGroup>
 </Project>

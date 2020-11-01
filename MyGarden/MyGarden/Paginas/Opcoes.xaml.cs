@@ -1,5 +1,4 @@
-﻿using Java.Lang;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,7 +26,7 @@ namespace MyGarden.Paginas
         [Obsolete]
         public void GoAvalieApp(object sender, EventArgs args)
         {
-            Device.OpenUri(new Uri("https://play.google.com/store?hl=pt_BR"));
+            Device.OpenUri(new Uri("https://play.google.com/store/apps/details?id=com.companyname.mygarden"));
         }
 
         public async void GoTermos(object sender, EventArgs args)
@@ -45,7 +44,7 @@ namespace MyGarden.Paginas
             string action = await DisplayActionSheet("Sair do MyGarden?", "Cancelar", null, "Sim, quero sair.", "Não");
             if (action == "Sim, quero sair.")
             {
-                JavaSystem.Exit(0);
+                System.Environment.Exit(0);
             }
             else
             {
