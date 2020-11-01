@@ -144,7 +144,6 @@
     <BundleResource Include="Resources\Lista.png" />
     <BundleResource Include="Resources\LogoMyGarden.png" />
     <BundleResource Include="Resources\mail.png" />
-    <BundleResource Include="Resources\MinhasPlantas.png" />
     <BundleResource Include="Resources\mockup1.png" />
     <BundleResource Include="Resources\mockup2.png" />
     <BundleResource Include="Resources\more.png" />
@@ -154,6 +153,7 @@
     <BundleResource Include="Resources\search.png" />
     <BundleResource Include="Resources\splash_screen.xml" />
     <BundleResource Include="Resources\star.png" />
+    <BundleResource Include="Resources\MinhasPlantas.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Banco\" />
