@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-
 using SQLite;
-using System.Linq;
 using Xamarin.Forms;
 using MyGarden.Models;
 
@@ -11,7 +8,7 @@ namespace MyGarden.Banco
 {
     class Database
     {
-        private SQLiteConnection _conexao;
+        private readonly SQLiteConnection _conexao;
 
         public Database()
         {
