@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using Plugin.Media;
+using Xamarin.Forms;
 
 namespace MyGarden
 {
@@ -7,6 +8,8 @@ namespace MyGarden
         public App()
         {
             InitializeComponent();
+
+            CrossMedia.Current.Initialize();
 
             MainPage = new Paginas.TabbedPage1();
         }

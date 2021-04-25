@@ -5,6 +5,8 @@ using MyGarden.Models;
 using MyGarden.Banco;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using Xamarin.Essentials;
+using MyGarden.Helpers;
 
 namespace MyGarden.Paginas
 {
@@ -136,14 +138,19 @@ namespace MyGarden.Paginas
             }
         }
 
-        
+        [Obsolete]
         public async void AbrirCamera(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
-
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("Nenhuma Câmera", ":( Nenuma Câmera disponível.", "OK");
+                return;
+            }
+
+            var isPermissionGranted = await PermissionsHelper.RequestCameraAndGalleryPermissions();
+
+            if (!isPermissionGranted)
+            {
                 return;
             }
 
@@ -163,16 +170,21 @@ namespace MyGarden.Paginas
                 await DisplayAlert("Alerta", "Nenhum arquivo selecionado", "OK");
             }
         }
-        
 
+        [Obsolete]
         public async void AbrirGaleria(object sender, EventArgs args)
         {
-            await CrossMedia.Current.Initialize();
-
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
                 await DisplayAlert("Ops", "Galeria de fotos não suportada.", "OK");
 
+                return;
+            }
+
+            var isPermissionGranted = await PermissionsHelper.RequestCameraAndGalleryPermissions();
+
+            if (!isPermissionGranted)
+            {
                 return;
             }
 
