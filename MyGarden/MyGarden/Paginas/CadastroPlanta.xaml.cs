@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using MyGarden.Models;
@@ -154,7 +149,7 @@ namespace MyGarden.Paginas
 
             var arquivo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                PhotoSize = PhotoSize.Medium,
                 CompressionQuality = 40,
                 SaveToAlbum = true,
             });
@@ -181,9 +176,9 @@ namespace MyGarden.Paginas
                 return;
             }
 
-            var arquivo = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            var arquivo = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
             { 
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                PhotoSize = PhotoSize.Medium,
                 CompressionQuality = 40
                 
             });
