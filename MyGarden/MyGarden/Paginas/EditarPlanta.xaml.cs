@@ -5,6 +5,7 @@ using MyGarden.Banco;
 using MyGarden.Models;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
+using MyGarden.Helpers;
 
 namespace MyGarden.Paginas
 {
@@ -237,19 +238,25 @@ namespace MyGarden.Paginas
             Observacao.Text = planta.Observacao;
         }
 
+        [Obsolete]
         public async void AbrirCamera(object sender, EventArgs e)
         {
-            await CrossMedia.Current.Initialize();
-
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await DisplayAlert("Nenhuma Câmera", ":( Nenuma Câmera disponível.", "OK");
                 return;
             }
 
+            var isPermissionGranted = await PermissionsHelper.RequestCameraAndGalleryPermissions();
+
+            if (!isPermissionGranted)
+            {
+                return;
+            }
+
             var arquivo = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                PhotoSize = PhotoSize.Medium,
                 CompressionQuality = 40,
                 SaveToAlbum = true,
             });
@@ -264,11 +271,9 @@ namespace MyGarden.Paginas
             }
         }
 
-
+        [Obsolete]
         public async void AbrirGaleria(object sender, EventArgs args)
         {
-            await CrossMedia.Current.Initialize();
-
             if (!CrossMedia.Current.IsPickPhotoSupported)
             {
                 await DisplayAlert("Ops", "Galeria de fotos não suportada.", "OK");
@@ -276,19 +281,28 @@ namespace MyGarden.Paginas
                 return;
             }
 
-            var arquivo = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
+            var isPermissionGranted = await PermissionsHelper.RequestCameraAndGalleryPermissions();
+
+            if (!isPermissionGranted)
             {
-                PhotoSize = Plugin.Media.Abstractions.PhotoSize.Medium,
+                return;
+            }
+
+            var arquivo = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions
+            {
+                PhotoSize = PhotoSize.Medium,
                 CompressionQuality = 40
 
             });
 
+            if (arquivo == null)
+            {
+                return;
+            }
+                
             NomeArquivo = arquivo.Path;
 
             await DisplayAlert("Foto selecionada com sucesso!", NomeArquivo, "OK");
-
-            if (arquivo == null)
-                return;
         }
 
         public async void Salvar(object sender, EventArgs args)
