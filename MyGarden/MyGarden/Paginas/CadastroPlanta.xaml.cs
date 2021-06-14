@@ -5,7 +5,6 @@ using MyGarden.Models;
 using MyGarden.Banco;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
-using Xamarin.Essentials;
 using MyGarden.Helpers;
 
 namespace MyGarden.Paginas
