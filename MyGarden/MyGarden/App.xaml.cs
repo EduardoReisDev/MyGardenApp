@@ -10,6 +10,7 @@ namespace MyGarden
             InitializeComponent();
 
             CrossMedia.Current.Initialize();
+            XF.Material.Forms.Material.Init(this);
 
             MainPage = new Paginas.TabbedPage1();
         }

@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.CadastroPlanta"
              NavigationPage.HasNavigationBar="False">
@@ -15,12 +16,33 @@
                        FontSize="25"
                        Margin="0,10,0,0"/>
                 <StackLayout Margin="20,10,20,0">
-                    <Entry x:Name="NomePopular"
-                           Placeholder="Nome popular"
-                           PlaceholderColor="#9f9fa6"/>
-                    <Entry x:Name="NomeCientifico"
-                           Placeholder="Nome científico"
-                           PlaceholderColor="#9f9fa6"/>
+                    <material:MaterialTextField x:Name="NomePopular"
+                                                Placeholder="Nome popular"
+                                                HelperText="Exemplo: Costela-de-Adão"
+                                                InputType="Text"
+                                                TintColor="#02C39A"/>
+                    <material:MaterialTextField x:Name="NomeCientifico"
+                                                Placeholder="Nome científico"
+                                                HelperText="Exemplo: Monstera deliciosa"
+                                                InputType="Text"
+                                                TintColor="#02C39A"/>
+                    <material:MaterialTextField x:Name="Observacao"
+                                                Placeholder="Observação sobre a planta"
+                                                HelperText="Exemplo: Possui folhas grandes e cordiformes"
+                                                InputType="Text"
+                                                TintColor="#02C39A"/>
+                    <material:MaterialTextField x:Name="Iluminacao"
+                                                Placeholder="Tipo de iluminação"
+                                                HelperText="Tipo de iluminação do local onde está a planta"
+                                                InputType="Text"
+                                                TintColor="#02C39A"/>
+                    <material:MaterialDateField Placeholder="Última adubação"
+                                                TintColor="#02C39A"
+                                                LeadingIconTintColor="#02C39A"/>
+                    <material:MaterialDateField Placeholder="Próxima adubação"
+                                                TintColor="#02C39A"
+                                                LeadingIconTintColor="#02C39A"/>
+
                     <Entry x:Name="Observacao"
                            Placeholder="Observações sobre a planta"/>
                     <Label Text="Tipo de iluminação: "/>
