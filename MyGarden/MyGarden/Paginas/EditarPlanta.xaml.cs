@@ -21,6 +21,14 @@ namespace MyGarden.Paginas
         string dia5 = null;
         string dia6 = null;
         string dia7 = null;
+
+        string interno = null;
+        string externo = null;
+
+        string solPleno = null;
+        string meiaSombra = null;
+        string luzDifusa = null;
+
         string NomeArquivo = null;
 
         public void DiaUmVerifica(Planta planta)
@@ -114,6 +122,146 @@ namespace MyGarden.Paginas
             }
         }
 
+        public void BtnSolPlenoVerifica(Planta planta)
+        {
+            if (planta.Iluminacao == "Sol pleno")
+            {
+                SolPlenoBtn.IsToggled = true;
+            }
+
+            else
+            {
+                SolPlenoBtn.IsToggled = false;
+            }
+        }
+
+        public void BtnMeiaSombraVerifica(Planta planta)
+        {
+            if (planta.Iluminacao == "Meia sombra")
+            {
+                MeiaSombraBtn.IsToggled = true;
+            }
+
+            else
+            {
+                MeiaSombraBtn.IsToggled = false;
+            }
+        }
+
+        public void BtnLuzDifusaVerifica(Planta planta)
+        {
+            if (planta.Iluminacao == "Luz difusa ou sombra")
+            {
+                LuzDifusaBtn.IsToggled = true;
+            }
+
+            else
+            {
+                LuzDifusaBtn.IsToggled = false;
+            }
+        }
+
+        public void BtnInternoVerifica(Planta planta)
+        {
+            if (planta.Ambiente == "Ambiente interno")
+            {
+                InternoBtn.IsToggled = true;
+            }
+
+            else
+            {
+                InternoBtn.IsToggled = false;
+            }
+        }
+
+        public void BtnExternoVerifica(Planta planta)
+        {
+            if (planta.Ambiente == "Ambiente externo")
+            {
+                ExternoBtn.IsToggled = true;
+            }
+
+            else
+            {
+                ExternoBtn.IsToggled = false;
+            }
+        }
+
+        public void BtnInterno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                interno = "Ambiente interno";
+            }
+
+            else
+            {
+                interno = null;
+            }
+        }
+
+        public void BtnExterno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                externo = "Ambiente externo";
+            }
+
+            else
+            {
+                externo = null;
+            }
+        }
+
+        public void BtnSolPleno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                solPleno = "Sol pleno";
+            }
+
+            else
+            {
+                solPleno = null;
+            }
+        }
+
+        public void BtnMeiaSombra(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                meiaSombra = "Meia sombra";
+            }
+
+            else
+            {
+                meiaSombra = null;
+            }
+        }
+
+        public void BtnLuzDifusa(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                luzDifusa = "Luz difusa ou sombra";
+            }
+
+            else
+            {
+                luzDifusa = null;
+            }
+        }
+
         public void BtnSegunda(object sender, ToggledEventArgs e)
         {
             bool value = e.Value;
@@ -131,7 +279,6 @@ namespace MyGarden.Paginas
 
         public void BtnTerca(object sender, ToggledEventArgs e)
         {
-
             bool value = e.Value;
 
             if (value == true)
@@ -223,6 +370,7 @@ namespace MyGarden.Paginas
         public EditarPlanta(Planta planta)
         {
             InitializeComponent();
+
             this.planta = planta;
             DiaUmVerifica(planta);
             DiaDoisVerifica(planta);
@@ -232,10 +380,20 @@ namespace MyGarden.Paginas
             DiaSeisVerifica(planta);
             DiaSeteVerifica(planta);
 
+            BtnSolPlenoVerifica(planta);
+            BtnMeiaSombraVerifica(planta);
+            BtnLuzDifusaVerifica(planta);
+
+            BtnInternoVerifica(planta);
+            //BtnExternoVerifica(planta);
+
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
-
             Observacao.Text = planta.Observacao;
+
+            UltimaAdubacao.Date = planta.UltimaAdubacao != null ? planta.UltimaAdubacao : DateTime.Today;
+            ProximaAdubacao.Date = planta.ProximaAdubacao != null ? planta.ProximaAdubacao : DateTime.Today;
+            Aquisicao.Date = planta.Aquisicao != null ? planta.Aquisicao : DateTime.Today;
         }
 
         [Obsolete]
@@ -307,7 +465,32 @@ namespace MyGarden.Paginas
 
         public async void Salvar(object sender, EventArgs args)
         {
-            if(NomeArquivo == null)
+            string ambienteAux = string.Empty;
+            string iluminacaoAux = string.Empty;
+
+            if (interno != null)
+            {
+                ambienteAux = interno;
+            }
+            if (externo != null)
+            {
+                ambienteAux = externo;
+            }
+
+            if (solPleno != null)
+            {
+                iluminacaoAux = solPleno;
+            }
+            if (meiaSombra != null)
+            {
+                iluminacaoAux = meiaSombra;
+            }
+            if (luzDifusa != null)
+            {
+                iluminacaoAux = luzDifusa;
+            }
+
+            if (NomeArquivo == null)
             {
                 NomeArquivo = planta.Imagem;
             }
@@ -320,6 +503,14 @@ namespace MyGarden.Paginas
             planta.NomePopular = NomePopular.Text;
             planta.NomeCientifico = NomeCientifico.Text;
             planta.Observacao = Observacao.Text;
+
+            planta.Ambiente = ambienteAux;
+            planta.Iluminacao = iluminacaoAux;
+
+            planta.UltimaAdubacao = (DateTime)UltimaAdubacao.Date;
+            planta.ProximaAdubacao = (DateTime)ProximaAdubacao.Date;
+            planta.Aquisicao = (DateTime)Aquisicao.Date;
+
             planta.DiaUm = dia1;
             planta.DiaDois = dia2;
             planta.DiaTres = dia3;

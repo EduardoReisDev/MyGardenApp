@@ -19,16 +19,103 @@ namespace MyGarden.Paginas
         string dia5 = null;
         string dia6 = null;
         string dia7 = null;
+
+        string interno = null;
+        string externo = null;
+
+        string solPleno = null;
+        string meiaSombra = null;
+        string luzDifusa = null;
+
         string NomeArquivo = null;
 
         public CadastroPlanta()
         {
             InitializeComponent();
+
+            UltimaAdubacao.Date = DateTime.Today;
+            ProximaAdubacao.Date = DateTime.Today;
+            Aquisicao.Date = DateTime.Today;
         }
 
         public async void GoHome(object sender, EventArgs args)
         {
             await Navigation.PushAsync(new Home());
+        }
+
+        public void BtnInterno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                interno = "Ambiente interno";
+            }
+
+            else
+            {
+                interno = null;
+            }
+        }
+
+        public void BtnExterno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                externo = "Ambiente externo";
+            }
+
+            else
+            {
+                externo = null;
+            }
+        }
+
+        public void BtnSolPleno(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                solPleno = "Sol pleno";
+            }
+
+            else
+            {
+                solPleno = null;
+            }
+        }
+
+        public void BtnMeiaSombra(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                meiaSombra = "Meia sombra";
+            }
+
+            else
+            {
+                meiaSombra = null;
+            }
+        }
+
+        public void BtnLuzDifusa(object sender, ToggledEventArgs e)
+        {
+            bool value = e.Value;
+
+            if (value == true)
+            {
+                luzDifusa = "Luz difusa ou sombra";
+            }
+
+            else
+            {
+                luzDifusa = null;
+            }
         }
 
         public void BtnSegunda(object sender, ToggledEventArgs e)
@@ -142,7 +229,7 @@ namespace MyGarden.Paginas
         {
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await DisplayAlert("Nenhuma Câmera", ":( Nenuma Câmera disponível.", "OK");
+                await DisplayAlert("Nenhuma Câmera", "Nenhuma Câmera disponível.", "OK");
                 return;
             }
 
@@ -204,12 +291,45 @@ namespace MyGarden.Paginas
 
         public async void SalvarAction(object sender, EventArgs args)
         {
+            string ambienteAux = string.Empty;
+            string iluminacaoAux = string.Empty;
+
+            if(interno != null)
+            {
+                ambienteAux = interno;
+            }
+            if(externo != null)
+            {
+                ambienteAux = externo;
+            }
+
+            if(solPleno != null)
+            {
+                iluminacaoAux = solPleno;
+            }
+            if(meiaSombra != null)
+            {
+                iluminacaoAux = meiaSombra;
+            }
+            if(luzDifusa != null)
+            {
+                iluminacaoAux = luzDifusa;
+            }
+
             //Obter dados da tela
             Planta planta = new Planta
             {
                 NomePopular = NomePopular.Text,
                 NomeCientifico = NomeCientifico.Text,
                 Observacao = Observacao.Text,
+
+                Ambiente = ambienteAux,
+                Iluminacao = iluminacaoAux,
+
+                UltimaAdubacao = (DateTime)UltimaAdubacao.Date,
+                ProximaAdubacao = (DateTime)ProximaAdubacao.Date,
+                Aquisicao = (DateTime)Aquisicao.Date,
+
                 DiaUm = dia1,
                 DiaDois = dia2,
                 DiaTres = dia3,
