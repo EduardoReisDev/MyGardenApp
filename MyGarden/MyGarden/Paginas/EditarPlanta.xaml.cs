@@ -385,7 +385,7 @@ namespace MyGarden.Paginas
             BtnLuzDifusaVerifica(planta);
 
             BtnInternoVerifica(planta);
-            //BtnExternoVerifica(planta);
+            BtnExternoVerifica(planta);
 
             NomePopular.Text = planta.NomePopular;
             NomeCientifico.Text = planta.NomeCientifico;
