@@ -40,7 +40,7 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PopAsync();
         }
 
         public void BtnInterno(object sender, ToggledEventArgs e)
@@ -222,6 +222,11 @@ namespace MyGarden.Paginas
             {
                 dia7 = null;
             }
+        }
+
+        public async void BackPageButton(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
 
         [Obsolete]

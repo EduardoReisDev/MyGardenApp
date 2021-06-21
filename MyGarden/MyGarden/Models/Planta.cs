@@ -11,14 +11,11 @@ namespace MyGarden.Models
         public string NomePopular { get; set; }
         public string NomeCientifico { get; set; }
         public string Observacao { get; set; }
-
         public string Iluminacao { get; set; }
         public string Ambiente { get; set; }
-
         public DateTime UltimaAdubacao { get; set; }
         public DateTime ProximaAdubacao { get; set; }
         public DateTime Aquisicao { get; set; }
-
         public string DiaUm { get; set; }
         public string DiaDois { get; set; }
         public string DiaTres { get; set; }

@@ -9,32 +9,40 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="#f2f2f2">
-                <Label Text="Lista de desejo" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25" Margin="0,10,0,0"/>
-                <StackLayout Margin="10,10,10,0">
-                    <material:MaterialTextField x:Name="NomePopularPL"
-                                                Placeholder="Nome popular *"
-                                                HelperText="Exemplo: Costela-de-Adão"
-                                                InputType="Text"
-                                                TintColor="#02C39A"/>
-                    <material:MaterialTextField x:Name="NomeCientificoPL"
-                                                Margin="0, 5,0,0"
-                                                Placeholder="Nome científico"
-                                                HelperText="Exemplo: Monstera deliciosa"
-                                                InputType="Text"
-                                                TintColor="#02C39A"/>
-                    <Grid Margin="10, 15,10,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080" Clicked="GoHome"/>
-                        <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="SalvarAction"/>
-                    </Grid>
-                </StackLayout>
+            <StackLayout Margin="20,10,20,0">
+                <ImageButton Source="arrowgray.png"
+                             WidthRequest="36"
+                             HorizontalOptions="Start"
+                             Margin="0,10,0,10"
+                             Clicked="BackPageButton"
+                             BackgroundColor="Transparent"/>
+                <material:MaterialTextField x:Name="NomePopularPL"
+                                            Placeholder="Nome popular *"
+                                            InputType="Text"
+                                            TintColor="#02C39A"/>
+                <material:MaterialTextField x:Name="NomeCientificoPL"
+                                            Margin="0, 5,0,0"
+                                            Placeholder="Nome científico"
+                                            InputType="Text"
+                                            TintColor="#02C39A"/>
+                <Grid Margin="0,15,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0"
+                            Text="Cancelar"
+                            CornerRadius="10"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#808080"
+                            Clicked="GoHome"/>
+                    <Button Grid.Column="1"
+                            Text="Salvar"
+                            CornerRadius="10"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#02C39A"
+                            Clicked="SalvarAction"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>
