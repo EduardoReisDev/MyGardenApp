@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.ListaPlanta"
              NavigationPage.HasNavigationBar="False">
@@ -19,7 +20,7 @@
                                 BackgroundColor="#02C39A"
                                 TextColor="#FFFFFF"
                                 CornerRadius="20"
-                                Padding="10"
+                                Padding="20,10,20,10"
                                 HorizontalOptions="EndAndExpand"
                                 Clicked="GoCadastro"/>
                     </StackLayout>

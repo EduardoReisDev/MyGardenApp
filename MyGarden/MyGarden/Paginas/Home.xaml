@@ -21,7 +21,7 @@
                                 BackgroundColor="#02C39A"
                                 TextColor="#FFFFFF"
                                 CornerRadius="20"
-                                Padding="10"
+                                Padding="20,10,20,10"
                                 HorizontalOptions="EndAndExpand"
                                 Clicked="GoCadastro"/>
                     </StackLayout>
