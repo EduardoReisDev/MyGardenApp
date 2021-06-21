@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Controls="clr-namespace:MyGarden.Controls"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.Home"
              NavigationPage.HasNavigationBar="False">
@@ -11,11 +12,23 @@
         <ScrollView>
             <StackLayout BackgroundColor="#FFFFFF">
                 <StackLayout BackgroundColor="#f2f2f2">
-                    <StackLayout Orientation="Horizontal" Margin="10, 10, 10, 10">
-                        <Image Source="LogoMyGarden.png" WidthRequest="150" HorizontalOptions="StartAndExpand"/>
-                        <Button Text="+ Nova Planta" BackgroundColor="#02C39A" TextColor="#FFFFFF" CornerRadius="20" Padding="10" HorizontalOptions="EndAndExpand" Clicked="GoCadastro"/>
+                    <StackLayout Orientation="Horizontal"
+                                 Margin="10, 10, 10, 10">
+                        <Image Source="LogoMyGarden.png"
+                               WidthRequest="150"
+                               HorizontalOptions="StartAndExpand"/>
+                        <Button Text="Nova Planta"
+                                BackgroundColor="#02C39A"
+                                TextColor="#FFFFFF"
+                                CornerRadius="20"
+                                Padding="20,10,20,10"
+                                HorizontalOptions="EndAndExpand"
+                                Clicked="GoCadastro"/>
                     </StackLayout>
-                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,20">
+                    <Frame Padding="0"
+                           CornerRadius="10"
+                           BackgroundColor="#d5d5d8"
+                           Margin="10, 5,10,20">
                         <Grid>
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
@@ -24,56 +37,109 @@
                                 <ColumnDefinition Width="30"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
-                            <Image Grid.Column="0" Source="search.png" WidthRequest="10" Margin="10,0,0,0"/>
-                            <Controls:XEntry Grid.Column="1" Placeholder="Busque suas plantas" PlaceholderColor="#9f9fa6" TextColor="#02C39A" TextChanged="PesquisarAction"/>
+                            <Image Grid.Column="0"
+                                   Source="search.png"
+                                   WidthRequest="10"
+                                   Margin="10,0,0,0"/>
+                            <Controls:XEntry Grid.Column="1"
+                                             Placeholder="Busque suas plantas"
+                                             PlaceholderColor="#9f9fa6"
+                                             TextChanged="PesquisarAction"/>
                         </Grid>
                     </Frame>
                 </StackLayout>
-
-                <StackLayout Margin="10,0,0,0" Orientation="Horizontal">
-                    <Label Text="" x:Name="LblCount"/>
+                <StackLayout Margin="10,0,0,0"
+                             Orientation="Horizontal"
+                             x:Name="NumberOfPlants"
+                             IsVisible="false">
+                    <Label Text=""
+                           x:Name="LblCount"/>
                     <Label Text="plantas no seu jardim"/>
                 </StackLayout>
-
-                <ListView x:Name="ListaPlantas" HasUnevenRows="True">
+                <StackLayout Padding="0,100,0,0"
+                             IsVisible="true"
+                             x:Name="EmptyState">
+                    <Image Source="plantpot.png"
+                           WidthRequest="100"/>
+                    <Label Text="Nenhuma planta no seu jardim"
+                           Margin="0,10,0,0"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                    <Label Text="Cadastre uma planta e ela aparecerá aqui"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"/>
+                </StackLayout>
+                <ListView x:Name="ListaPlantas"
+                          HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame Padding="0" CornerRadius="10" Margin="10" BackgroundColor="#f2f2f2" HasShadow="False">
+                                <Frame Padding="0"
+                                       CornerRadius="10"
+                                       Margin="10"
+                                       BackgroundColor="#f2f2f2"
+                                       HasShadow="False">
                                     <Grid>
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="Auto" />
                                         </Grid.RowDefinitions>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="120"/>
+                                            <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="*"/>
-                                            <ColumnDefinition Width="30"/>
+                                            <ColumnDefinition Width="auto"/>
                                         </Grid.ColumnDefinitions>
-                                        <Image HeightRequest="50" Aspect="AspectFill">
+                                        <Image HeightRequest="50"
+                                               Aspect="AspectFill">
                                             <Image.Source>
                                                 <FileImageSource File="{Binding Imagem}"/>
                                             </Image.Source>
                                         </Image>
-                                        <StackLayout Grid.Column="1" Margin="0,10,0,10">
-                                            <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" FontSize="25" TextColor="#00A896"/>
-                                            <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" FontAttributes="Italic" TextColor="#00A896"/>
+                                        <StackLayout Grid.Column="1"
+                                                     Margin="0,10,0,10">
+                                            <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}"
+                                                   FontSize="25"
+                                                   TextColor="#00A896"/>
+                                            <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}"
+                                                   FontAttributes="Italic"
+                                                   TextColor="#00A896"/>
                                             <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}"/>
                                         </StackLayout>
-                                        <StackLayout Grid.Column="2" VerticalOptions="EndAndExpand">
-                                            <Image Source="pen.png" WidthRequest="25">
+                                        <Frame HasShadow="True"
+                                               Grid.Column="2"
+                                               VerticalOptions="Start"
+                                               BackgroundColor="#FCF8CC"
+                                               CornerRadius="10"
+                                               Padding="0"
+                                               Margin="10">
+                                            <Image Source="pen.png"
+                                                   WidthRequest="25"
+                                                   Margin="5">
                                                 <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="EditarAction" CommandParameter="{Binding .}"/>
+                                                    <TapGestureRecognizer Tapped="EditarAction"
+                                                                          CommandParameter="{Binding .}"/>
                                                 </Image.GestureRecognizers>
                                             </Image>
-                                            <Image Source="bin.png" WidthRequest="25" Margin="0,10,0,10">
+                                        </Frame>
+                                        <Frame HasShadow="True"
+                                               Grid.Column="2"
+                                               VerticalOptions="End"
+                                               BackgroundColor="#F8E5E5"
+                                               CornerRadius="10"
+                                               Padding="0"
+                                               Margin="10">
+                                            <Image Source="bin.png"
+                                                   Margin="5"
+                                                   WidthRequest="25">
                                                 <Image.GestureRecognizers>
-                                                    <TapGestureRecognizer Tapped="ExcluirAction" CommandParameter="{Binding .}"/>
+                                                    <TapGestureRecognizer Tapped="ExcluirAction"
+                                                                          CommandParameter="{Binding .}"/>
                                                 </Image.GestureRecognizers>
                                             </Image>
-                                        </StackLayout>
+                                        </Frame>
                                     </Grid>
                                     <Frame.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="GoDetalhe" CommandParameter="{Binding .}"/>
+                                        <TapGestureRecognizer Tapped="GoDetalhe"
+                                                              CommandParameter="{Binding .}"/>
                                     </Frame.GestureRecognizers>
                                 </Frame>
                             </ViewCell>

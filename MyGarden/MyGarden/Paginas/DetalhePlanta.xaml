@@ -8,33 +8,85 @@
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="#f2f2f2">
-                <Image Source="arrow.png" WidthRequest="40" HorizontalOptions="StartAndExpand" Margin="10">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="GoHome"/>
-                    </Image.GestureRecognizers>
-                </Image>
-                <StackLayout Margin="20,0,20,0">
-                    <Label Text="nome popular" />
-                    <Label Text="{Binding NomePopular, TargetNullValue='Sem nome'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label Text="nome científico"/>
-                    <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label Text="observação"/>
-                    <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}" TextColor="#02C39A" FontSize="20"/>
-                    <Image WidthRequest="250">
+            <StackLayout>
+                <Grid RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Image HorizontalOptions="FillAndExpand"
+                           VerticalOptions="FillAndExpand"
+                           HeightRequest="360"
+                           Aspect="AspectFill"
+                           Grid.Row="0">
                         <Image.Source>
                             <FileImageSource File="{Binding Imagem}"/>
                         </Image.Source>
                     </Image>
-                    <Label Text="dias de aguar"/>
-                    <Label x:Name="DiaUm" Text="{Binding DiaUm, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaDois" Text="{Binding DiaDois, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaTres" Text="{Binding DiaTres, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaCinco" Text="{Binding DiaCinco, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaSeis" Text="{Binding DiaSeis, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                    <Label x:Name="DiaSete" Text="{Binding DiaSete, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
-                </StackLayout>
+                    <ImageButton Grid.Row="0"
+                                 Margin="20"
+                                 HorizontalOptions="Start"
+                                 VerticalOptions="Start"
+                                 Source="arrowwhite.png"
+                                 WidthRequest="42"
+                                 Clicked="BackPageButton"
+                                 BackgroundColor="Transparent"/>
+                    <StackLayout Grid.Row="1"
+                                 Margin="10">
+                        <Label Text="{Binding NomePopular, TargetNullValue='Sem nome popular'}"
+                               TextColor="#02C39A"
+                               FontSize="26"/>
+                        <Label Text="{Binding NomeCientifico, TargetNullValue='Sem nome científico'}"
+                               FontAttributes="Italic"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="observação"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding Observacao, TargetNullValue='Sem observação'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="data da última adubação"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding UltimaAdubacao, TargetNullValue='Sem data', StringFormat='{0:dddd, dd MMMM yyyy}'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="data da próxima adubação"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding ProximaAdubacao, TargetNullValue='Sem data', StringFormat='{0:dddd, dd MMMM yyyy}'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="data de aquisição"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding Aquisicao, TargetNullValue='Sem data', StringFormat='{0:dddd, dd MMMM yyyy}'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="ambiente da planta"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding Ambiente, TargetNullValue='Sem ambiente'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="iluminação da planta"
+                               Margin="0,10,0,0"/>
+                        <Label Text="{Binding Iluminacao, TargetNullValue='Sem iluminação'}"
+                               TextColor="#02C39A"
+                               FontSize="20"/>
+                        <Label Text="dias de aguar"
+                               Margin="0,10,0,0"/>
+                        <Label x:Name="DiaUm" Text="{Binding DiaUm, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaDois" Text="{Binding DiaDois, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaTres" Text="{Binding DiaTres, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaQuatro" Text="{Binding DiaQuatro, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaCinco" Text="{Binding DiaCinco, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaSeis" Text="{Binding DiaSeis, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Label x:Name="DiaSete" Text="{Binding DiaSete, TargetNullValue='-'}" TextColor="#02C39A" FontSize="20"/>
+                        <Button Margin="0,10,0,0"
+                                Text="Voltar"
+                                CornerRadius="10"
+                                TextColor="#FFFFFF"
+                                BackgroundColor="#808080"
+                                Clicked="BackPageButton"/>
+                    </StackLayout>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

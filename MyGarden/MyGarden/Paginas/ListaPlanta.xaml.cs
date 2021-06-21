@@ -16,6 +16,11 @@ namespace MyGarden.Paginas
         public ListaPlanta()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             ConsultarPlantas();
         }
 
@@ -25,6 +30,17 @@ namespace MyGarden.Paginas
             Lista = database.ConsultarPL();
             ListaPlantas.ItemsSource = Lista;
             LblCount.Text = Lista.Count.ToString();
+
+            if (Lista.Count > 0)
+            {
+                EmptyState.IsVisible = false;
+                NumberOfPlants.IsVisible = true;
+            }
+            else
+            {
+                EmptyState.IsVisible = true;
+                NumberOfPlants.IsVisible = false;
+            }
         }
 
         public async void GoCadastro(object sender, EventArgs args)

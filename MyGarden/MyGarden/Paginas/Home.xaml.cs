@@ -16,6 +16,11 @@ namespace MyGarden.Paginas
         public Home()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             ConsultarPlantas();
         }
 
@@ -25,6 +30,17 @@ namespace MyGarden.Paginas
             Lista = database.Consultar();
             ListaPlantas.ItemsSource = Lista;
             LblCount.Text = Lista.Count.ToString();
+
+            if(Lista.Count > 0)
+            {
+                EmptyState.IsVisible = false;
+                NumberOfPlants.IsVisible = true;
+            }
+            else
+            {
+                EmptyState.IsVisible = true;
+                NumberOfPlants.IsVisible = false;
+            }
         }
 
         public async void GoDetalhe(object sender, EventArgs args)
@@ -66,7 +82,6 @@ namespace MyGarden.Paginas
                 await DisplayAlert("MyGarden", "Parabéns, planta excluida com sucesso!", "Ótimo");
                 ConsultarPlantas();
             }
-
             else
             {
                 ConsultarPlantas();

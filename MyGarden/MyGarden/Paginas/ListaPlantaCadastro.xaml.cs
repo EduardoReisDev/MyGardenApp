@@ -16,27 +16,28 @@ namespace MyGarden.Paginas
 
         public async void GoHome(object sender, EventArgs args)
         {
-            //cancelar
-            await Navigation.PushAsync(new ListaPlanta());
+            await Navigation.PopAsync();
+        }
+
+        public async void BackPageButton(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
         }
 
         public async void SalvarAction(object sender, EventArgs args)
         {
-            //Obter dados da tela
             PlantaLista plantalista = new PlantaLista
             {
                 NomePopularPL = NomePopularPL.Text,
                 NomeCientificoPL = NomeCientificoPL.Text,
             };
 
-            //Salvar informacoes no banco
             Database database = new Database();
             database.CadastroPL(plantalista);
 
             await DisplayAlert("MyGarden", "Planta adicionada na minha lista de desejo.", "OK");
 
-            //Tela de sucesso
-            await Navigation.PushAsync(new ListaPlanta());
+            await Navigation.PopAsync();
         }
     }
 }

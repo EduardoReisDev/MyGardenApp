@@ -2,77 +2,212 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:Controls="clr-namespace:MyGarden.Controls"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.CadastroPlanta"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout BackgroundColor="#f2f2f2">
-                <Label Text="Nova planta" HorizontalOptions="CenterAndExpand" TextColor="#02C39A" FontSize="25" Margin="0,10,0,0"/>
-                <StackLayout Margin="10,10,10,0">
-                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                        <Controls:XEntry x:Name="NomePopular" Placeholder="Nome popular" PlaceholderColor="#9f9fa6"/>
-                    </Frame>
-                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                        <Controls:XEntry x:Name="NomeCientifico" Placeholder="Nome científico" PlaceholderColor="#9f9fa6"/>
-                    </Frame>
-                    <Frame Padding="0" CornerRadius="10" BackgroundColor="#d5d5d8" Margin="10, 5,10,5">
-                        <Controls:XEntry x:Name="Observacao" Placeholder="Observações sobre a planta" PlaceholderColor="#9f9fa6"/>
-                    </Frame>
-                    <Label Text="Selecione os dias da semana para aguar essa planta: " Margin="10, 5,10,5"/>
-                    <Grid Margin="10, 5,10,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="4*" />
-                            <RowDefinition Height="4*" />
-                            <RowDefinition Height="4*" />
-                            <RowDefinition Height="4*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Switch Grid.Column="0" Grid.Row="0" Toggled="BtnSegunda"/>
-                        <Label Grid.Column="1" Grid.Row="0" Text="Segunda" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="2" Grid.Row="0" Toggled="BtnTerca"/>
-                        <Label Grid.Column="3" Grid.Row="0" Text="Terça" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="0" Grid.Row="1" Toggled="BtnQuarta"/>
-                        <Label Grid.Column="1" Grid.Row="1" Text="Quarta" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="2" Grid.Row="1" Toggled="BtnQuinta"/>
-                        <Label Grid.Column="3" Grid.Row="1" Text="Quinta" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="0" Grid.Row="2" Toggled="BtnSexta"/>
-                        <Label Grid.Column="1" Grid.Row="2" Text="Sexta" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="2" Grid.Row="2" Toggled="BtnSabado"/>
-                        <Label Grid.Column="3" Grid.Row="2" Text="Sábado" VerticalOptions="CenterAndExpand"/>
-                        <Switch Grid.Column="0" Grid.Row="3" Toggled="BtnDomingo"/>
-                        <Label Grid.Column="1" Grid.Row="3" Text="Domingo" VerticalOptions="CenterAndExpand"/>
-                    </Grid>
-                    <Label Text="Selecione uma imagem:" Margin="10, 5,10,5"/>
-                    <Grid Margin="10, 5,10,20">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <ImageButton Grid.Column="0" Source="galeria.png" WidthRequest="100" Clicked="AbrirGaleria" BackgroundColor="Transparent"/>
-                        <ImageButton Grid.Column="1" Source="camera.png" WidthRequest="100" Clicked="AbrirCamera" BackgroundColor="Transparent"/>
-                    </Grid>
-                    <Grid Margin="10, 5,10,5">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*" />
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition />
-                            <ColumnDefinition />
-                        </Grid.ColumnDefinitions>
-                        <Button Grid.Column="0" Text="Cancelar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#808080" Clicked="GoHome"/>
-                        <Button Grid.Column="1"  Text="Salvar" CornerRadius="10" TextColor="#FFFFFF" BackgroundColor="#02C39A" Clicked="SalvarAction"/>
-                    </Grid>
-                </StackLayout>
+            <StackLayout Margin="20,10,20,0">
+                <ImageButton Source="arrowgray.png"
+                             WidthRequest="36"
+                             HorizontalOptions="Start"
+                             Margin="0,10,0,10"
+                             Clicked="BackPageButton"
+                             BackgroundColor="Transparent"/>
+                <material:MaterialTextField x:Name="NomePopular"
+                                            Placeholder="Nome popular *"
+                                            InputType="Text"
+                                            TintColor="#02C39A"/>
+                <material:MaterialTextField x:Name="NomeCientifico"
+                                            Margin="0, 5,0,0"
+                                            Placeholder="Nome científico"
+                                            InputType="Text"
+                                            TintColor="#02C39A"/>
+                <material:MaterialTextField x:Name="Observacao"
+                                            Margin="0, 5,0,0"
+                                            Placeholder="Observação sobre a planta"
+                                            InputType="Text"
+                                            TintColor="#02C39A"/>
+                <material:MaterialDateField Placeholder="Data da última adubação"
+                                            x:Name="UltimaAdubacao"
+                                            TintColor="#02C39A"
+                                            Margin="0, 5,0,0"/>
+                <material:MaterialDateField Placeholder="Data da próxima adubação"
+                                            x:Name="ProximaAdubacao"
+                                            TintColor="#02C39A"
+                                            Margin="0, 5,0,0"/>
+                <material:MaterialDateField Placeholder="Data de aquisição"
+                                            x:Name="Aquisicao"
+                                            TintColor="#02C39A"
+                                            Margin="0, 5,0,0"/>
+                <Label Text="Selecione o ambiente onde esssa planta está: "
+                       Margin="0, 10,0,0"
+                       FontSize="15"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0"
+                            Grid.Row="0"
+                            Toggled="BtnInterno"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="0"
+                            Text="Ambiente interno"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="1"
+                            Toggled="BtnExterno"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="1"
+                            Text="Ambiente externo"
+                            VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <Label Text="Selecione o tipo de iluminação do local onde a planta está: "
+                        Margin="0, 10,0,0"
+                        FontSize="15"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0"
+                            Grid.Row="0"
+                            Toggled="BtnSolPleno"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="0"
+                            Text="Sol pleno"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="1"
+                            Toggled="BtnMeiaSombra"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="1"
+                            Text="Meia sombra"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="2"
+                            Toggled="BtnLuzDifusa"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="2"
+                            Text="Luz difusa ou sombra"
+                            VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <Label Text="Selecione os dias da semana para aguar essa planta: "
+                        Margin="0, 10,0,0"
+                        FontSize="15"/>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Switch Grid.Column="0"
+                            Grid.Row="0"
+                            Toggled="BtnSegunda"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="0"
+                            Text="Segunda-feira"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="2"
+                            Grid.Row="0"
+                            Toggled="BtnTerca"/>
+                    <Label Grid.Column="3"
+                            Grid.Row="0"
+                            Text="Terça-feira"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="1"
+                            Toggled="BtnQuarta"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="1"
+                            Text="Quarta-feira"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="2"
+                            Grid.Row="1"
+                            Toggled="BtnQuinta"/>
+                    <Label Grid.Column="3"
+                            Grid.Row="1"
+                            Text="Quinta-feira"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="2"
+                            Toggled="BtnSexta"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="2"
+                            Text="Sexta-feira"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="2"
+                            Grid.Row="2"
+                            Toggled="BtnSabado"/>
+                    <Label Grid.Column="3"
+                            Grid.Row="2"
+                            Text="Sábado"
+                            VerticalOptions="CenterAndExpand"/>
+                    <Switch Grid.Column="0"
+                            Grid.Row="3"
+                            Toggled="BtnDomingo"/>
+                    <Label Grid.Column="1"
+                            Grid.Row="3"
+                            Text="Domingo"
+                            VerticalOptions="CenterAndExpand"/>
+                </Grid>
+                <Label Text="Selecione uma imagem:"
+                        Margin="0, 10,0,0"
+                        FontSize="15"/>
+                <Grid Margin="0, 5,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <ImageButton Grid.Column="0"
+                                 Source="galeria.png"
+                                 WidthRequest="86"
+                                 Clicked="AbrirGaleria"
+                                 BackgroundColor="Transparent"/>
+                    <ImageButton Grid.Column="1"
+                                 Source="camera.png"
+                                 WidthRequest="86"
+                                 Clicked="AbrirCamera"
+                                 BackgroundColor="Transparent"/>
+                </Grid>
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0"
+                            Text="Cancelar"
+                            CornerRadius="10"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#808080"
+                            Clicked="GoHome"/>
+                    <Button Grid.Column="1"
+                            Text="Salvar"
+                            CornerRadius="10"
+                            TextColor="#FFFFFF"
+                            BackgroundColor="#02C39A"
+                            Clicked="SalvarAction"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

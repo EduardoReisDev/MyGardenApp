@@ -19,6 +19,7 @@ namespace MyGarden.Droid
             Xamarin.Forms.Forms.SetFlags("SwipeView_Experimental");
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            XF.Material.Droid.Material.Init(this, savedInstanceState);
             await CrossMedia.Current.Initialize();
             LoadApplication(new App());
         }

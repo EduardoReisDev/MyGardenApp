@@ -21,9 +21,14 @@ namespace MyGarden.Paginas
             BindingContext = planta;
         }
 
+        public async void BackPageButton(object sender, EventArgs e)
+        {
+            await Navigation.PopAsync();
+        }
+
         public async void GoHome(object sender, EventArgs args)
         {
-            await Navigation.PushAsync(new Home());
+            await Navigation.PopAsync();
         }
 
         public void VerificaDiaUm(Planta planta)
