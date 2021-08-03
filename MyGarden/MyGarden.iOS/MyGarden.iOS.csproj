@@ -68,6 +68,7 @@
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Banco\Caminho.cs" />
+    <Compile Include="CustomRenderers\CustomFrameRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
@@ -123,8 +124,8 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.7.0.968" />
-    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -154,8 +155,12 @@
     <BundleResource Include="Resources\splash_screen.xml" />
     <BundleResource Include="Resources\star.png" />
     <BundleResource Include="Resources\MinhasPlantas.png" />
+    <BundleResource Include="Resources\plants.png" />
+    <BundleResource Include="Resources\list.png" />
+    <BundleResource Include="Resources\settings.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Banco\" />
+    <Folder Include="CustomRenderers\" />
   </ItemGroup>
 </Project>

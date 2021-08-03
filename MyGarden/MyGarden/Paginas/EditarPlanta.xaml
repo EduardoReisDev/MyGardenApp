@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              mc:Ignorable="d"
              x:Class="MyGarden.Paginas.EditarPlanta"
              NavigationPage.HasNavigationBar="False">
@@ -15,41 +14,24 @@
                        TextColor="#02C39A"
                        FontSize="25"/>
                 <StackLayout Margin="10,10,10,0">
-                    <material:MaterialTextField x:Name="NomePopular"
-                                                Placeholder="Nome popular *"
-                                                HelperText="Exemplo: Costela-de-Adão"
-                                                InputType="Text"
-                                                TintColor="#02C39A"/>
-                    <material:MaterialTextField x:Name="NomeCientifico"
-                                                Margin="0, 5,0,0"
-                                                Placeholder="Nome científico"
-                                                HelperText="Exemplo: Monstera deliciosa"
-                                                InputType="Text"
-                                                TintColor="#02C39A"/>
-                    <material:MaterialTextField x:Name="Observacao"
-                                                Margin="0, 5,0,0"
-                                                Placeholder="Observação sobre a planta"
-                                                HelperText="Exemplo: Possui folhas grandes e cordiformes"
-                                                InputType="Text"
-                                                TintColor="#02C39A"/>
-                    <material:MaterialDateField Placeholder="Data da última adubação"
-                                                x:Name="UltimaAdubacao"
-                                                HelperText="Data de quando ocorreu a última adubação"
-                                                TintColor="#02C39A"
-                                                Margin="0, 5,0,0"
-                                                LeadingIconTintColor="#02C39A"/>
-                    <material:MaterialDateField Placeholder="Data da próxima adubação"
-                                                x:Name="ProximaAdubacao"
-                                                HelperText="Data de quando ocorrerá a próxima adubação"
-                                                TintColor="#02C39A"
-                                                Margin="0, 5,0,0"
-                                                LeadingIconTintColor="#02C39A"/>
-                    <material:MaterialDateField Placeholder="Data de aquisição"
-                                                x:Name="Aquisicao"
-                                                HelperText="Data de aquisição da planta"
-                                                TintColor="#02C39A"
-                                                Margin="0, 5,0,0"
-                                                LeadingIconTintColor="#02C39A"/>
+                    <Entry x:Name="NomePopular"
+                           Placeholder="Nome popular *"/>
+                    <Entry x:Name="NomeCientifico"
+                           Margin="0, 5,0,0"
+                           Placeholder="Nome científico"/>
+                    <Entry x:Name="Observacao"
+                           Margin="0, 5,0,0"
+                           Placeholder="Observação sobre a planta"/>
+
+                    <Label Text="Data da última adubação"/>
+                    <DatePicker x:Name="UltimaAdubacao"/>
+
+                    <Label Text="Data da próxima adubação"/>
+                    <DatePicker x:Name="ProximaAdubacao"/>
+
+                    <Label Text="Data de aquisição"/>
+                    <DatePicker x:Name="Aquisicao"/>
+
                     <Label Text="Selecione o ambiente onde esssa planta está: "
                            Margin="0, 5,0,0"
                            FontSize="15"/>
